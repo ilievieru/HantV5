@@ -108,11 +108,13 @@ function generateRawData(){
         currentTempValue = currentTempValue * (tools.rand2(80, 130) / 100);
 
     return {
-        "ID": getRandomInt(60,69),
+        "ID": getRandomInt(86,104),
         "Type": type,
         "Temperature": tools.trunc(currentTempValue, 2)
     };
 }
+
+
 
 function publish(rawData) {
 
@@ -120,7 +122,7 @@ function publish(rawData) {
     var count = 0;
     console.log(rawData);
 
-    for (var i = 0; i < subscribers.length; i++) 
+    for (var i = 0; i < subscribers.length; i++)
         if(subscribers[i].sendErrorCount !== undefined && subscribers[i].sendErrorCount > 4){
             console.log("[" + type + "] Removed subscriber " + i + " (port " + subscribers[i].port + ") because it doesn't respond to the publications.")
             subscribers.splice(i--, 1);

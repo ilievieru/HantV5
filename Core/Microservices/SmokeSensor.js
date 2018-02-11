@@ -141,7 +141,7 @@ function generateRawData(){
         currentCO2Value = currentCO2Value * 1.3;
 
     return {
-        "ID": getRandomInt(50,59),
+        "ID": getRandomInt(67,85),
         "Type": type,
         "CO2": tools.trunc(currentCO2Value, 2),
         "Temperature": tools.trunc(currentTempValue, 2)
@@ -154,7 +154,7 @@ function publish(rawData) {
     var count = 0;
     console.log(rawData);
 
-    for (var i = 0; i < subscribers.length; i++) 
+    for (var i = 0; i < subscribers.length; i++)
         if(subscribers[i].sendErrorCount !== undefined && subscribers[i].sendErrorCount > 4){
             console.log("[" + type + "] Removed subscriber " + i + " (port " + subscribers[i].port + ") because it doesn't respond to the publications.")
             subscribers.splice(i--, 1);

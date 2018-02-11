@@ -105,7 +105,7 @@ function generateRawData(){
     var disturbanceLevel = currentMotionDetectedValue*1.34;
     var motionDetected = currentMotionDetectedValue>=5;
     return {
-        "ID": getRandomInt(30,39),
+        "ID": getRandomInt(48,66),
         "Type": type,
         "MotionDetected": motionDetected,
         "DisturbanceLevel": Math.floor(disturbanceLevel)
@@ -118,7 +118,7 @@ function publish(rawData) {
     var count = 0;
     console.log(rawData);
 
-    for (var i = 0; i < subscribers.length; i++) 
+    for (var i = 0; i < subscribers.length; i++)
         if(subscribers[i].sendErrorCount !== undefined && subscribers[i].sendErrorCount > 4){
             console.log("[" + type + "] Removed subscriber " + i + " (port " + subscribers[i].port + ") because it doesn't respond to the publications.")
             subscribers.splice(i--, 1);

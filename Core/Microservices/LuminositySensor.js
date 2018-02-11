@@ -115,11 +115,11 @@ function generateRawData(){
         LightLevel = 2;
     else if(currentLumenValue<=80)
         LightLevel = 3;
-    else 
+    else
         LightLevel = 4;
 
     return {
-        "ID": getRandomInt(20,29),
+        "ID": getRandomInt(29,47),
         "Type": type,
         "LightLevel": LightLevel,
         "Luminosity": tools.trunc(currentLumenValue, 3)
@@ -132,7 +132,7 @@ function publish(rawData) {
     var count = 0;
     console.log(rawData);
 
-    for (var i = 0; i < subscribers.length; i++) 
+    for (var i = 0; i < subscribers.length; i++)
         if(subscribers[i].sendErrorCount !== undefined && subscribers[i].sendErrorCount > 4){
             console.log("[" + type + "] Removed subscriber " + i + " (port " + subscribers[i].port + ") because it doesn't respond to the publications.")
             subscribers.splice(i--, 1);

@@ -107,7 +107,7 @@ function generateRawData(){
 
     if(currentValue < 0.1)
         currentValue *= 75;
-    
+
     if(currentValue > 100)
         currentValue *= 0.75;
 
@@ -121,7 +121,7 @@ function generateRawData(){
         waterLevel = 1;
 
     return {
-        "ID": getRandomInt(10,19),
+        "ID": getRandomInt(10,28),
         "Type": type,
         "HumidityLevel": tools.trunc(currentValue, 2),
         "WaterLevel": waterLevel
@@ -134,7 +134,7 @@ function publish(rawData) {
     var count = 0;
     console.log(rawData);
 
-    for (var i = 0; i < subscribers.length; i++) 
+    for (var i = 0; i < subscribers.length; i++)
         if(subscribers[i].sendErrorCount !== undefined && subscribers[i].sendErrorCount > 4){
             console.log("[" + type + "] Removed subscriber " + i + " (port " + subscribers[i].port + ") because it doesn't respond to the publications.")
             subscribers.splice(i--, 1);
