@@ -67,7 +67,15 @@ public class Mapping {
     @RequestMapping(value = "/getPatients", method = RequestMethod.POST)
     @ResponseBody
     public List<Patient>  getPatientList() {
-        List<Patient> devicesList = LocalConstants.patient;
+        List<Patient> devicesList = LocalConstants.patientIndividual;
+        return devicesList;
+    }
+
+    @CrossOrigin(origins = "http://localhost:8080")
+    @RequestMapping(value = "/getPatientsGeneral", method = RequestMethod.POST)
+    @ResponseBody
+    public List<AbstractDevice>  getPatientGenerralList() {
+        List<AbstractDevice> devicesList = LocalConstants.patient;
         return devicesList;
     }
 

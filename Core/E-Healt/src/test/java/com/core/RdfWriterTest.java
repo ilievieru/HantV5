@@ -71,62 +71,19 @@ public class RdfWriterTest {
     public void testReadOntologyFile() {
         jenaModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM, null);
         try {
-            InputStream in = FileManager.get().open("D:/TestV2.owl");
+            InputStream in = FileManager.get().open("D:/SensorOntologyFinal.owl");
             try {
                 jenaModel.read(in, null);
 
-                Resource sensors = jenaModel.createResource("https://en.wikipedia.org/wiki/Sensor");
 
-                Property leakSensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Leak_detection#LeakSensor");
-                Property waterLevel = jenaModel.createObjectProperty("https://en.wikipedia.org/wiki/Level_sensor#waterLevel");
-                Property humidity = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Humidity");
 
-                Property waterLevelUnitOfMeasure = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Centimetre");
-                Property waterLevelUnitOfMeasureM = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Metre");
-
-                Property unitOfMeasure = jenaModel.createProperty("https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure");
-                unitOfMeasure.addProperty(waterLevelUnitOfMeasure,waterLevelUnitOfMeasure);
-                unitOfMeasure.addProperty(waterLevelUnitOfMeasureM,waterLevelUnitOfMeasureM);
-
-                leakSensor.addProperty(unitOfMeasure,unitOfMeasure);
-
-                leakSensor.addProperty(humidity, humidity);
-                leakSensor.addProperty(waterLevel, waterLevel);
-                sensors.addProperty(leakSensor, leakSensor);
-
-                Property luminositySensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Light_meter#LuminositySensor");
-                Property lightLevel = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel");
-                Property luminosity = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Luminosity");
-                luminositySensor.addProperty(lightLevel, lightLevel);
-                luminositySensor.addProperty(luminosity, luminosity);
-                sensors.addProperty(luminositySensor, luminositySensor);
-
-                Property motionSensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Motion_detector#MotionSensor");
-                Property motionDetected = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected");
-                Property disturbanceLevel = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel");
-                motionSensor.addProperty(motionDetected, motionDetected);
-                motionSensor.addProperty(disturbanceLevel, disturbanceLevel);
-                sensors.addProperty(motionSensor, motionSensor);
-
-                Property smokeSensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor");
-                Property co2 = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Carbon_dioxide#CO2");
-                Property temperature = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Temperature");
-                smokeSensor.addProperty(co2, co2);
-                smokeSensor.addProperty(temperature, temperature);
-                sensors.addProperty(smokeSensor, smokeSensor);
-
-                Property thermostatSensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor");
-                Property temperatureThm = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Temperature");
-                thermostatSensor.addProperty(temperatureThm, temperatureThm);
-                sensors.addProperty(thermostatSensor,thermostatSensor);
-
-                Individual individual = jenaModel.createIndividual(smokeSensor);
+              /*  Individual individual = jenaModel.createIndividual(smokeSensor);
                 individual.addProperty(co2,"12");
                 individual.addProperty(temperature,"1sad2");
 
                 Individual individual2 = jenaModel.createIndividual(smokeSensor);
                 individual2.addProperty(co2,"1222");
-                individual2.addProperty(temperature,"1sad22222");
+                individual2.addProperty(temperature,"1sad22222");*/
 
             } catch (Exception e) {
                 e.printStackTrace();

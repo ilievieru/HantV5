@@ -1,6 +1,7 @@
 package com.localConstants;
 
 import com.agents.Patient;
+import com.devices.PatientData;
 import com.devices.abstractFactory.AbstractDevice;
 
 import javax.validation.constraints.Null;
@@ -53,8 +54,9 @@ public interface LocalConstants {
     //Evac Arrow
     String EvacArrowValue = "IsOn";
 
-    List<Patient> patient = new ArrayList<>();
+    List<AbstractDevice> patient = new ArrayList<>();
     List<AbstractDevice> rdfDevices = new ArrayList<>();
+    List<Patient> patientIndividual = new ArrayList<>();
 
     int initialNumberOfSensors = 19;
 

@@ -46,7 +46,7 @@ public class DataParser {
             }
 
         AbstractDevice instance = FactoryDevice.getDevice(data);
-        devices.add(instance);
+        LocalConstants.patient.add(instance);
         return instance;
     }
 

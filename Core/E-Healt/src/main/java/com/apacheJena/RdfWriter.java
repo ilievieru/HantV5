@@ -47,7 +47,7 @@ public class RdfWriter {
         if (get != null) {
             for (Map<String, Object> entry : get) {
                 Patient patient = new Patient();
-                LocalConstants.patient.add(patient);
+                LocalConstants.patientIndividual.add(patient);
                 if (entry.containsKey(LocalConstants.age))
                     patient.setAge((int) entry.get(LocalConstants.age));
                 if (entry.containsKey(LocalConstants.pulse))
