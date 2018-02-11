@@ -87,11 +87,11 @@ public class DataParser {
 
     public static void initializeDevices() {
         for (int i = 0; i <= LocalConstants.initialNumberOfSensors; i++) {
-            initLeakSensor(i);
-            initLuminositySensor(i);
-            initMotionSensor(i);
-            initSmokeSensor(i);
-            initThermostatSensor(i);
+            initLeakSensor(i); //10 - 28
+            initLuminositySensor(i); // 29-47
+            initMotionSensor(i);//48-66
+            initSmokeSensor(i);//67-85
+            initThermostatSensor(i);//86-104
         }
     }
 
@@ -105,7 +105,7 @@ public class DataParser {
 
     private static void initMotionSensor(int i) {
         MotionSensor motionSensor = new MotionSensor();
-        motionSensor.setDeviceId(i + 30);
+        motionSensor.setDeviceId(i + 29);
         motionSensor.setDeviceName(LocalConstants.motionSensor);
         motionSensor.setDeviceType(LocalConstants.motionSensor);
         DataParser.devices.add(motionSensor);
@@ -113,7 +113,7 @@ public class DataParser {
 
     private static void initLuminositySensor(int i) {
         LuminositySensor luminositySensor = new LuminositySensor();
-        luminositySensor.setDeviceId(i + 20);
+        luminositySensor.setDeviceId(i + 48);
         luminositySensor.setDeviceName(LocalConstants.luminositySensor);
         luminositySensor.setDeviceType(LocalConstants.luminositySensor);
         DataParser.devices.add(luminositySensor);
@@ -121,7 +121,7 @@ public class DataParser {
 
     private static void initThermostatSensor(int i) {
         ThermostatSensor thermostatSensor = new ThermostatSensor();
-        thermostatSensor.setDeviceId(i + 60);
+        thermostatSensor.setDeviceId(i + 67);
         thermostatSensor.setDeviceName(LocalConstants.thermostatSensor);
         thermostatSensor.setDeviceType(LocalConstants.thermostatSensor);
         DataParser.devices.add(thermostatSensor);
@@ -129,7 +129,7 @@ public class DataParser {
 
     private static void initSmokeSensor(int i) {
         SmokeSensor smokeSensor = new SmokeSensor();
-        smokeSensor.setDeviceId(i + 50);
+        smokeSensor.setDeviceId(i + 86);
         smokeSensor.setDeviceName(LocalConstants.smokeSensor);
         smokeSensor.setDeviceType(LocalConstants.smokeSensor);
         DataParser.devices.add(smokeSensor);

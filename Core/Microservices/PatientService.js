@@ -109,7 +109,7 @@ function generateRawData(){
         "Patients":[
             {
                 "PatientId": getRandomInt(0,15),
-                "Cam": patientId1+4,
+                "Cam": getRandomInt(1,19),
                 "Age": 37,
                 "IsMoving": tools.rand(3) == 2 ? true : false,
                 "Pulse": tools.rand2(67,87),
@@ -118,7 +118,7 @@ function generateRawData(){
             },
             {
                 "PatientId": getRandomInt(15,30),
-                "Cam": 4,
+                "Cam": getRandomInt(1,19),
                 "Age": 71,
                 "IsMoving": tools.rand(3) == 2 ? true : false,
                 "Pulse": tools.rand2(67,87),
@@ -127,7 +127,7 @@ function generateRawData(){
             },
             {
                 "PatientId": getRandomInt(30,45),
-                "Cam": 4,
+                "Cam": getRandomInt(1,19),
                 "Age": 13,
                 "IsMoving": tools.rand(3) == 2 ? true : false,
                 "Pulse": tools.rand2(67,87),
