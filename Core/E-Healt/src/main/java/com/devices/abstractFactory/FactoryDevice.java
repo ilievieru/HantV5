@@ -15,7 +15,7 @@ public class FactoryDevice {
         rdfWriter.writeRdfSensors(data);
 
         try {
-            Class<?> clazz = Class.forName("com.rdfDevices." + (String) data.get(LocalConstants.type));
+            Class<?> clazz = Class.forName("com.devices." + (String) data.get(LocalConstants.type));
             Constructor<?> ctor;
             ctor = clazz.getConstructor(Map.class);
             return (AbstractDevice) ctor.newInstance(new Object[] { data });

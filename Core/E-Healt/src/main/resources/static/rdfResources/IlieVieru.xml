@@ -8,6 +8,7 @@
   </j.0:name>
   <j.0:name>VieriuIlie-Constantin</j.0:name>
 </rdf:Description>
+
   <rdf:Description rdf:about="http://localhost:8080/rdfResources/IlieVieru12.rdf">
     <j.0:name rdf:parseType="Resource">
       <j.0:lastName>Ilie-Constantin</j.0:lastName>

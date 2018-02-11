@@ -1,6 +1,0 @@
-com\start\DemoApplicationTests.class
-com\core\TestDataParser.class
-com\core\TestPerson.class
-com\core\RdfWriterTest.class
-com\core\TestLeakSensor.class
-com\nonFunctional\TestDataParser.class

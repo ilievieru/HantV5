@@ -13,8 +13,6 @@ public class PatientData extends AbstractDevice {
     public static ArrayList<Patient> patients = new ArrayList<>();
 
     public PatientData(Map<String, Object> data) {
-        RdfWriter rdfWriter = new RdfWriter();
-        rdfWriter.writeRdfPatient(data);
         super.update(data);
         update(data);
         this.setDeviceName("Patient Data Source");
@@ -44,6 +42,7 @@ public class PatientData extends AbstractDevice {
                 patient.setCameraID((int) entry.get(LocalConstants.cam));
 
             patients.add(patient);
+            LocalConstants.patientIndividual.add(patient);
         }
     }
 
