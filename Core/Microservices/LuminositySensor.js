@@ -119,7 +119,7 @@ function generateRawData(){
         LightLevel = 4;
 
     return {
-        "ID": getRandomInt(29,47),
+        "ID": getRandomInt(1,19) + 200,
         "Type": type,
         "LightLevel": LightLevel,
         "Luminosity": tools.trunc(currentLumenValue, 3)

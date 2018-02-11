@@ -141,7 +141,7 @@ function generateRawData(){
         currentCO2Value = currentCO2Value * 1.3;
 
     return {
-        "ID": getRandomInt(67,85),
+        "ID": getRandomInt(1,19) + 400,
         "Type": type,
         "CO2": tools.trunc(currentCO2Value, 2),
         "Temperature": tools.trunc(currentTempValue, 2)

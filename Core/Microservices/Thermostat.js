@@ -108,7 +108,7 @@ function generateRawData(){
         currentTempValue = currentTempValue * (tools.rand2(80, 130) / 100);
 
     return {
-        "ID": getRandomInt(86,104),
+        "ID": getRandomInt(1,19) + 500,
         "Type": type,
         "Temperature": tools.trunc(currentTempValue, 2)
     };

@@ -105,7 +105,7 @@ function generateRawData(){
     var disturbanceLevel = currentMotionDetectedValue*1.34;
     var motionDetected = currentMotionDetectedValue>=5;
     return {
-        "ID": getRandomInt(48,66),
+        "ID": getRandomInt(1,19) + 300,
         "Type": type,
         "MotionDetected": motionDetected,
         "DisturbanceLevel": Math.floor(disturbanceLevel)

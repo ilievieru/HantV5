@@ -121,7 +121,7 @@ function generateRawData(){
         waterLevel = 1;
 
     return {
-        "ID": getRandomInt(10,28),
+        "ID": getRandomInt(1,19) + 100,
         "Type": type,
         "HumidityLevel": tools.trunc(currentValue, 2),
         "WaterLevel": waterLevel
