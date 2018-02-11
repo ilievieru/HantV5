@@ -1,0 +1,57 @@
+/* 
+1. LeakSensor       -> [humidityLevel, waterLevel]
+2. LuminositySensor -> [lightLevel]
+3. MotionSensor     -> [motionDetected, disturbanceLevel]
+4. SmokeSensor      -> [co2Level]
+5. ThermostatSensor -> [temperature]
+
+*/
+{
+    "data": [
+        [10, 0, 0, 0, 10, 15, 24], // Normal low values
+        [20, 0, 1, 0, 20, 15, 24], // Normal low values
+        [20, 0, 2, 1, 3, 15, 24], // Normal low values
+        [20, 0, 0, 1, 14, 15, 24], // Normal low values
+        [7, 0, 1, 0, 31, 15, 24], // Normal low values
+        [11, 0, 0, 0, 31, 15, 24], // Normal low values
+        [18, 0, 0, 1, 31, 15, 24], // Normal low values
+        [26, 1, 0, 0, 10, 15, 24], // flood high water concentrations
+        [46, 2, 0, 0, 10, 15, 24], // flood high water concentrations
+        [80, 2, 0, 0, 10, 15, 24], // flood high water concentrations
+        [20, 1, 4, 0, 10, 40, 24], // smoke and light -> might be fire
+        [20, 1, 3, 0, 10, 50, 24], // smoke and light -> might be fire
+        [20, 1, 2, 0, 10, 30, 24], // smoke and light -> might be fire
+        [20, 1, 4, 0, 10, 60, 24], // smoke and light -> might be fire
+        [20, 1, 0, 0, 10, 15, 50], // Fire, high Temp
+        [10, 0, 1, 0, 10, 15, 60], // Fire, high Temp
+        [15, 0, 1, 0, 10, 15, 70], // Fire, high Temp
+        [21, 0, 1, 1, , 17, 20], // Earthquake, high Temp
+        [13, 0, 1, 1, 10, 11, 20], // Earthquake, high Temp
+        [5, 0, 3, 1, 10, 10, 30], // Earthquake, high Temp
+        [6, 0, 2, 1, 10, 15, 24], // Earthquake, high Temp
+    ],
+    "classifications": [
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Normal",
+        "Flood",
+        "Flood",
+        "Flood",
+        "Fire",
+        "Fire",
+        "Fire",
+        "Fire",
+        "Fire",
+        "Fire",
+        "Fire",
+        "Earthquake",
+        "Earthquake",
+        "Earthquake",
+        "Earthquake",
+    ],
+    "type": "Health"
+}

@@ -1,0 +1,39 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://xmlns.com/foaf/0.1/">
+  <rdf:Description rdf:about="http://localhost:8080/rdfResources/IlieVieru.rdf">
+  <j.0:name rdf:parseType="Resource">
+    <j.0:lastName>Ilie-Constantin</j.0:lastName>
+    <j.0:firstName>Vieriu</j.0:firstName>
+  </j.0:name>
+  <j.0:name>VieriuIlie-Constantin</j.0:name>
+</rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8080/rdfResources/IlieVieru12.rdf">
+    <j.0:name rdf:parseType="Resource">
+      <j.0:lastName>Ilie-Constantin</j.0:lastName>
+      <j.0:firstName>Vieriu</j.0:firstName>
+    </j.0:name>
+    <j.0:name>Vieriu Ilie-Constantin545</j.0:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8080/rdfResources/IlieVieru232.rdf">
+    <j.0:name rdf:parseType="Resource">
+      <j.0:lastName>Ilie-Constantin</j.0:lastName>
+      <j.0:firstName>Vieriu</j.0:firstName>
+    </j.0:name>
+    <j.0:name>Vieriu Ilie-Constantinewqeqw</j.0:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8080/rdfResources/IlieVieru4343.rdf">
+    <j.0:name rdf:parseType="Resource">
+      <j.0:lastName>Ilie-Constantin</j.0:lastName>
+      <j.0:firstName>Vieriu</j.0:firstName>
+    </j.0:name>
+    <j.0:name>VieriuIlie-Constantin23</j.0:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://localhost:8080/rdfResources/IlieVieru54454.rdf">
+    <j.0:name rdf:parseType="Resource">
+      <j.0:lastName>Ilie-Constantin</j.0:lastName>
+      <j.0:firstName>Vieriu</j.0:firstName>
+    </j.0:name>
+    <j.0:name>VieriuIlie-Constantin</j.0:name>
+  </rdf:Description>
+</rdf:RDF>

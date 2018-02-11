@@ -1,0 +1,12 @@
+temp
+Packages/
+*/bin/
+*/obj/
+*.lock.json
+*.opensdf
+*.sdf
+*.opendb
+*.user
+*.db
+*~$*.docx
+*.tmp

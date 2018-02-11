@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sensor API">
+  <title>Sensor</title>
+  <style>
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <p><h2>Sensor API</h2></p>
+  <table>
+    <th>URL</th>
+    <th>Method</th>
+    <th>Description</th>
+    <tr>
+      <td>/Connect/{ip}/{port}</td>
+      <td>GET</td>
+      <td> Subscribe to the raw sensor data.</td>
+    </tr>
+    <tr>
+      <td>/Disconnect/{ip}/{port}</td>
+      <td>GET</td>
+      <td> Unpair from the raw sensor data.</td>
+    </tr>
+    <tr>
+      <td><a href="/Generate">/Generate</a></td>
+      <td>GET</td>
+      <td> Generate and send raw data once.</td>
+    </tr>
+    <tr>
+      <td><a href="/GenerateStart">/GenerateStart</a></td>
+      <td>GET</td>
+      <td> Generate and send random raw data.</td>
+    </tr>
+    <tr>
+      <td><a href="/GenerateStop">/GenerateStop</a></td>
+      <td>GET</td>
+      <td> Stop the sensor activity.</td>
+    </tr>
+  </table>
+</body>
+</html>

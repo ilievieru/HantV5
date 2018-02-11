@@ -1,0 +1,82 @@
+<rdf:RDF
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:j.0="https://en.wikipedia.org/wiki/Light_level_geolocator#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:j.1="https://en.wikipedia.org/wiki/Thermostat#"
+        xmlns:j.2="https://en.wikipedia.org/wiki/Carbon_dioxide#"
+        xmlns:j.3="https://en.wikipedia.org/wiki/"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:j.4="https://en.wikipedia.org/wiki/Units_of_measurement#"
+        xmlns:j.5="https://en.wikipedia.org/wiki/Sound_level#"
+        xmlns:j.6="https://en.wikipedia.org/wiki/Motion_detector#"
+        xmlns:j.7="https://en.wikipedia.org/wiki/Light_meter#"
+        xmlns:j.8="https://en.wikipedia.org/wiki/Motion_(physics)#"
+        xmlns:j.9="https://en.wikipedia.org/wiki/Leak_detection#"
+        xmlns:j.10="https://en.wikipedia.org/wiki/Smoke_detector#"
+        xmlns:j.11="https://en.wikipedia.org/wiki/Level_sensor#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor">
+        <j.1:ThermostatSensor rdf:resource="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
+        <j.10:SmokeSensor rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
+        <j.6:MotionSensor rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
+        <j.7:LuminositySensor rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
+        <j.9:LeakSensor rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
+        <rdfs:label>Sensor Ontology</rdfs:label>
+        <rdfs:comment>Sensor custom ontology</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor">
+        <j.11:waterLevel>
+            <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Level_sensor#waterLevel"/>
+        </j.11:waterLevel>
+        <j.3:Humidity>
+            <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Humidity"/>
+        </j.3:Humidity>
+        <j.4:UnitOfMeasure>
+            <owl:Class rdf:about="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
+        </j.4:UnitOfMeasure>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor"/>
+        </rdfs:subClassOf>
+        <rdfs:comment>Custom Leak Sensor</rdfs:comment>
+        <rdfs:label xml:lang="en">Leak Sensor</rdfs:label>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Humidity">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/Hant/Core/E-Healt/xsd;positiveInteger"/>
+        <rdfs:comment>This is the humidity level readed by Leak Sensor</rdfs:comment>
+        <rdfs:label xml:lang="ro">Umiditatea</rdfs:label>
+        <rdfs:label xml:lang="en">Humidity Level</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Property"/>
+    </owl:DatatypeProperty>
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Level_sensor#waterLevel">
+        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
+        <rdfs:comment>This is the water level readed by Leak Sensor</rdfs:comment>
+        <rdfs:label xml:lang="ro">Nivelul apei</rdfs:label>
+        <rdfs:label xml:lang="en">Water Level</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Property"/>
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Metre">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/Hant/Core/E-Healt/xsd;positiveInteger"/>
+        <rdfs:comment>This is a unit of measure</rdfs:comment>
+        <rdfs:label xml:lang="ro">Metri</rdfs:label>
+        <rdfs:label xml:lang="en">Metre</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Property"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Centimetre">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/Hant/Core/E-Healt/xsd;positiveInteger"/>
+        <rdfs:comment>This is a unit of measure</rdfs:comment>
+        <rdfs:label xml:lang="ro">Centimetri</rdfs:label>
+        <rdfs:label xml:lang="en">Centimetre</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Property"/>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>
