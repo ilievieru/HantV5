@@ -46,7 +46,13 @@ public class DataParser {
             }
 
         AbstractDevice instance = FactoryDevice.getDevice(data);
-        LocalConstants.patient.add(instance);
+        if (instance.getDeviceType().equals("PatientData")) {
+            System.out.println("parse fi ------------------------------------------");
+            LocalConstants.patient.add(instance);
+        } else {
+            System.out.println("parse else ------------------------------------------");
+            devices.add(instance);
+        }
         return instance;
     }
 
@@ -100,7 +106,7 @@ public class DataParser {
         leakSensor.setDeviceId(i + 100);
         leakSensor.setDeviceName(LocalConstants.leakSensor);
         leakSensor.setDeviceType(LocalConstants.leakSensor);
-        DataParser.devices.add(leakSensor);
+        LocalConstants.devices.add(leakSensor);
     }
 
     private static void initMotionSensor(int i) {
@@ -108,7 +114,7 @@ public class DataParser {
         motionSensor.setDeviceId(i + 200);
         motionSensor.setDeviceName(LocalConstants.motionSensor);
         motionSensor.setDeviceType(LocalConstants.motionSensor);
-        DataParser.devices.add(motionSensor);
+        LocalConstants.devices.add(motionSensor);
     }
 
     private static void initLuminositySensor(int i) {
@@ -116,7 +122,7 @@ public class DataParser {
         luminositySensor.setDeviceId(i + 300);
         luminositySensor.setDeviceName(LocalConstants.luminositySensor);
         luminositySensor.setDeviceType(LocalConstants.luminositySensor);
-        DataParser.devices.add(luminositySensor);
+        LocalConstants.devices.add(luminositySensor);
     }
 
     private static void initThermostatSensor(int i) {
@@ -124,7 +130,7 @@ public class DataParser {
         thermostatSensor.setDeviceId(i + 400);
         thermostatSensor.setDeviceName(LocalConstants.thermostatSensor);
         thermostatSensor.setDeviceType(LocalConstants.thermostatSensor);
-        DataParser.devices.add(thermostatSensor);
+        LocalConstants.devices.add(thermostatSensor);
     }
 
     private static void initSmokeSensor(int i) {
@@ -132,6 +138,6 @@ public class DataParser {
         smokeSensor.setDeviceId(i + 500);
         smokeSensor.setDeviceName(LocalConstants.smokeSensor);
         smokeSensor.setDeviceType(LocalConstants.smokeSensor);
-        DataParser.devices.add(smokeSensor);
+        LocalConstants.devices.add(smokeSensor);
     }
 }

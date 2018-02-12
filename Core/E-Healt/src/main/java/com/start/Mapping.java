@@ -59,6 +59,14 @@ public class Mapping {
     @RequestMapping(value = "/getDevices", method = RequestMethod.POST)
     @ResponseBody
     public List<AbstractDevice>  getDevicesList() {
+        List<AbstractDevice> devicesList = LocalConstants.devices;
+        return devicesList;
+    }
+
+    @CrossOrigin(origins = "http://localhost:8080")
+    @RequestMapping(value = "/getDevicesAlarm", method = RequestMethod.POST)
+    @ResponseBody
+    public List<AbstractDevice>  getDevicesAlamList() {
         List<AbstractDevice> devicesList = DataParser.devices;
         return devicesList;
     }

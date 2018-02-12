@@ -42,7 +42,21 @@ public class PatientData extends AbstractDevice {
                 patient.setCameraID((int) entry.get(LocalConstants.cam));
 
             patients.add(patient);
-            LocalConstants.patientIndividual.add(patient);
+            System.out.println("Patients --- constr ---------------------------------------");
+            if (LocalConstants.patientIndividual.size() != 0) {
+                for (Patient p : LocalConstants.patientIndividual) {
+                    if (p.getIdPerson() == patient.getIdPerson()) {
+                        p = patient;
+                        System.out.println("PD id ----------------------------------------------");
+                    } else {
+                        LocalConstants.patientIndividual.add(patient);
+                        System.out.println("PD else ----------------------------------------------");
+                    }
+                }
+            } else {
+                LocalConstants.patientIndividual.add(patient);
+            }
+
         }
     }
 

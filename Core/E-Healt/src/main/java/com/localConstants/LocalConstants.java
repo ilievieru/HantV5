@@ -57,6 +57,7 @@ public interface LocalConstants {
     List<AbstractDevice> patient = new ArrayList<>();
     List<AbstractDevice> rdfDevices = new ArrayList<>();
     List<Patient> patientIndividual = new ArrayList<>();
+    List<AbstractDevice> devices = new ArrayList<>();
 
     int initialNumberOfSensors = 19;
 

@@ -257,14 +257,14 @@ public class RdfWriterTest {
         }
     }
 
-    public void insertRdf(){
+    public void insertRdf() {
         jenaModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM, null);
         try {
             InputStream in = FileManager.get().open("D:/SensorOntologyFinal.owl");
             try {
                 jenaModel.read(in, null);
-        Resource sensors = jenaModel.createResource("https://en.wikipedia.org/wiki/Sensor");
-        Resource node = jenaModel.createResource(sensors);
+                Resource sensors = jenaModel.createResource("https://en.wikipedia.org/wiki/Sensor");
+                Resource node = jenaModel.createResource(sensors);
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -298,7 +298,7 @@ public class RdfWriterTest {
         }
     }
 
-    public void insertLeakSensor(Resource node, String idValue, String waterLevelValue, String humidityValue) {
+    public void insertLeakSensor(Resource node, String idValue, String waterLevelValueCM, String humidityValue) {
         Property id = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Unique_identifier");
         Property timestamp = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Timestamp");
 
@@ -306,18 +306,21 @@ public class RdfWriterTest {
         Property waterLevel = jenaModel.createObjectProperty("https://en.wikipedia.org/wiki/Level_sensor#waterLevel");
         Property humidity = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Humidity");
 
+        Property centimeters = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Centimetre");
+        Property meters = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Metre");
 
-       /* node = jenaModel.createResource(sensors)
-                .addProperty(smokeSensor, jenaModel.createResource()
-                        .addProperty(co2, "255")
-                        .addProperty(id, "1")
-                        .addProperty(timestamp, new Date().toString())
-                        .addProperty(temperature, jenaModel.createResource()
-                                .addProperty(celsius, "50"))
-                );*/
+
+        node.addProperty(leakSensor, jenaModel.createResource()
+                .addProperty(id, idValue)
+                .addProperty(timestamp, new Date().toString())
+                .addProperty(humidity, humidityValue)
+                .addProperty(waterLevel, jenaModel.createResource()
+                        .addProperty(centimeters, waterLevelValueCM)
+                        .addProperty(meters, (Double.parseDouble(waterLevelValueCM) / 100) + ""))
+        );
     }
 
-    public void insertLuminositykSensor(Resource node, String idValue, String lightLevelValue, String luminosityValue ) {
+    public void insertLuminositykSensor(Resource node, String idValue, String lightLevelValue, String luminosityValue) {
         Property id = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Unique_identifier");
         Property timestamp = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Timestamp");
 
@@ -335,15 +338,38 @@ public class RdfWriterTest {
         Property motionDetected = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected");
         Property disturbanceLevel = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel");
 
+        node.addProperty(motionSensor, jenaModel.createResource()
+                .addProperty(id, idValue)
+                .addProperty(timestamp, new Date().toString())
+                .addProperty(motionDetected, motionDetectedValue)
+                .addProperty(disturbanceLevel, disturbanceLevelValue));
+
     }
 
-    public void insertSmokeSensor(Resource node, String idValue, String co2Value, String temperatureValue) {
+    public void insertSmokeSensor(Resource node, String idValue, String co2Value, String temperatureValueCelsius) {
         Property id = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Unique_identifier");
         Property timestamp = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Timestamp");
 
         Property smokeSensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor");
         Property co2 = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Carbon_dioxide#CO2");
         Property temperature = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Temperature");
+
+        Property celsius = jenaModel.createDatatypeProperty("https://ro.wikipedia.org/wiki/Celsius");
+        Property fahrenheit = jenaModel.createDatatypeProperty("https://ro.wikipedia.org/wiki/Fahrenheit");
+        Property kelvin = jenaModel.createDatatypeProperty("https://ro.wikipedia.org/wiki/Kelvin");
+
+        String tempFahrenheit = ((Double.parseDouble(temperatureValueCelsius) * (9 / 5)) + 32) + "";
+        String tempKelvin = Double.parseDouble(temperatureValueCelsius) + 273.15 + "";
+
+        node.addProperty(smokeSensor, jenaModel.createResource()
+                .addProperty(id, idValue)
+                .addProperty(timestamp, new Date().toString())
+                .addProperty(co2, co2Value)
+                .addProperty(temperature, jenaModel.createResource()
+                        .addProperty(celsius, temperatureValueCelsius)
+                        .addProperty(fahrenheit, tempFahrenheit + "")
+                        .addProperty(kelvin, tempKelvin + ""))
+        );
 
     }
 
@@ -357,7 +383,7 @@ public class RdfWriterTest {
     }
 
     @Test
-    public void testPatients(){
+    public void testPatients() {
         System.out.println(LocalConstants.patient.size());
         System.out.println(LocalConstants.patientIndividual.size());
         System.out.println(LocalConstants.rdfDevices.size());
