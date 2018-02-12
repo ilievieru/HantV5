@@ -8,6 +8,8 @@ public class Patient extends Persons {
     public boolean isMoving;
     public double bodyTemperature;
     public int camera;
+    public int medicalCondition;
+    public int evacPriority;
 
     public Patient() {
     }

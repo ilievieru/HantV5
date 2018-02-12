@@ -187,8 +187,8 @@ public class DataParser {
         FileWriter fw = null;
         FileWriter fw1 = null;
         try {
-            fw = new FileWriter("D:/wade/SensorsOntologyIndividualFinalProd.owl");
-            fw1 = new FileWriter("D:/wade/SensorsOntologyIndividualFinalTriplesProd.owl");
+            fw = new FileWriter("D:/wade/SensorsOntologyIndividualFinalProdV2.owl");
+            fw1 = new FileWriter("D:/wade/SensorsOntologyIndividualFinalTriplesProdV2.owl");
             jenaModel.write(fw, "RDF/XML-ABBREV");
             jenaModel.write(fw1, "N-TRIPLES");
 

@@ -41,6 +41,23 @@ public class PatientData extends AbstractDevice {
             if (entry.containsKey(LocalConstants.cam))
                 patient.setCameraID((int) entry.get(LocalConstants.cam));
 
+            if ( patient.getAge() < 15) {
+                patient.evacPriority = 1;
+            }
+
+            if (patient.heartRate > 60 && patient.getAge() < 20 && patient.bodyTemperature > 36) {
+                patient.medicalCondition = 1;
+                patient.evacPriority = 1;
+            }
+            if (patient.heartRate > 60 && patient.getAge() > 20 && patient.getAge() > 40 && patient.bodyTemperature > 36) {
+                patient.medicalCondition = 1;
+                patient.evacPriority = 2;
+            }
+            if (patient.heartRate > 60 &&  patient.getAge() > 40 && patient.bodyTemperature > 36) {
+                patient.medicalCondition = 1;
+                patient.evacPriority = 3;
+            }
+
             patients.add(patient);
             if (LocalConstants.patientIndividual.size() != 0) {
                 for (Patient p : LocalConstants.patientIndividual) {

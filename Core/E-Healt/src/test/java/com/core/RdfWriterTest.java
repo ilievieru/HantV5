@@ -513,8 +513,4 @@ public class RdfWriterTest {
         System.out.println(DataParser.devices.size());
     }
 
-    @Test
-    public void testCreatePatientOntology() {
-
-    }
 }
