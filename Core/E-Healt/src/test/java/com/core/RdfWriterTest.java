@@ -128,7 +128,7 @@ public class RdfWriterTest {
 
                 Property smokeSensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor");
                 Property co2 = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Carbon_dioxide#CO2");
-                Property temperature = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Temperature");
+                Property temperature = jenaModel.createObjectProperty("https://en.wikipedia.org/wiki/Temperature");
                 smokeSensor.addProperty(co2, co2);
                 smokeSensor.addProperty(temperature, temperature);
                 smokeSensor.addProperty(id, id);
@@ -136,7 +136,7 @@ public class RdfWriterTest {
                 sensors.addProperty(smokeSensor, smokeSensor);
 
                 Property thermostatSensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor");
-                Property temperatureThm = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Temperature");
+                Property temperatureThm = jenaModel.createObjectProperty("https://en.wikipedia.org/wiki/Temperature");
                 thermostatSensor.addProperty(temperatureThm, temperatureThm);
                 thermostatSensor.addProperty(id, id);
                 thermostatSensor.addProperty(timestamp, timestamp);
@@ -240,21 +240,71 @@ public class RdfWriterTest {
     }
 
     @Test
-    public void readRdfFile() {
+    public void testGetAlarmsSmokeSensorsTemp() {
+        Map<String,  Map<String, String>> results = new HashMap<>();
+        Map<String, String> temp = new HashMap<>();
         FileManager.get().addLocatorClassLoader(RdfReader.class.getClassLoader());
         Model model = FileManager.get().loadModel("D:/SensorsOntologyIndividualFinal.owl");
         String queryString = LocalConstants.jenaQueryPrefixes +
                 "SELECT * " +
-                "where {?SmokeSensor j.0:Celsius ?x}";
+                "where {?SmokeSensor j.0:Celsius ?x." +
+                "?SmokeSensor j.0:Fahrenheit ?y ." +
+                "?SmokeSensor j.0:Kelvin ?z} ";
 
         Query query = QueryFactory.create(queryString);
         QueryExecution queryExecution = QueryExecutionFactory.create(query, model);
         ResultSet resultSet = queryExecution.execSelect();
         while (resultSet.hasNext()) {
             QuerySolution solution = resultSet.nextSolution();
+            temp = new HashMap<>();
+            temp.put("Celsius",solution.get("x").toString());
+            temp.put("Fahrenheit",solution.get("y").toString());
+            temp.put("Kelvin",solution.get("z").toString());
+            results.put(solution.get("SmokeSensor").toString(),temp);
             System.out.println(solution.get("x"));
-            System.out.println(solution + "teat");
+            System.out.println(solution.get("y"));
+            System.out.println(solution.get("z"));
+
+            System.out.println(solution.get("SmokeSensor"));
+            System.out.println(solution + "Complete");
         }
+    }
+
+    @Test
+    public void testGetAlarmsLuminositySensors() {
+        Map<String,  Map<String, String>> results = new HashMap<>();
+        Map<String, String> temp;
+        FileManager.get().addLocatorClassLoader(RdfReader.class.getClassLoader());
+        Model model = FileManager.get().loadModel("D:/SensorsOntologyIndividualFinal.owl");
+        String queryString = LocalConstants.jenaQueryPrefixes +
+                "SELECT * " +
+                "where {?LuminositySensor j.4:Luminosity ?x." +
+                "?LuminositySensor j.1:LightLevel ?y ." +
+                "?LuminositySensor j.4:Timestamp ?z} ";
+
+        Query query = QueryFactory.create(queryString);
+        QueryExecution queryExecution = QueryExecutionFactory.create(query, model);
+        ResultSet resultSet = queryExecution.execSelect();
+        while (resultSet.hasNext()) {
+            QuerySolution solution = resultSet.nextSolution();
+            temp = new HashMap<>();
+            temp.put("Luminosity",solution.get("x").toString());
+            temp.put("LightLevel",solution.get("y").toString());
+            temp.put("Timestamp",solution.get("z").toString());
+            results.put(solution.get("LuminositySensor").toString(),temp);
+            System.out.println(solution.get("x"));
+            System.out.println(solution.get("y"));
+            System.out.println(solution.get("z"));
+
+            System.out.println(solution.get("SmokeSensor"));
+            System.out.println(solution + "Complete");
+        }
+    }
+
+    @Test
+    public void insertRdfTest() {
+        insertRdf1();
+        insertRdf();
     }
 
     public void insertRdf() {
@@ -265,6 +315,57 @@ public class RdfWriterTest {
                 jenaModel.read(in, null);
                 Resource sensors = jenaModel.createResource("https://en.wikipedia.org/wiki/Sensor");
                 Resource node = jenaModel.createResource(sensors);
+                insertLeakSensor(node, "12", "22", "33");
+                insertLuminositykSensor(node, "13", "23", "34");
+                insertMotionSensor(node, "14", "24", "35");
+                insertSmokeSensor(node, "15", "25", "36");
+                insertThermostatSensor(node, "16", "26");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (JenaException je) {
+            System.err.println("ERROR" + je.getMessage());
+            je.printStackTrace();
+            System.exit(0);
+        }
+
+        FileWriter fw = null;
+        FileWriter fw1 = null;
+        try {
+            fw = new FileWriter("D:/SensorsOntologyIndividualFinal.owl");
+            fw1 = new FileWriter("D:/SensorsOntologyIndividualFinalTriples.owl");
+            jenaModel.write(fw, "RDF/XML-ABBREV");
+            jenaModel.write(fw1, "N-TRIPLES");
+
+            fw.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        } finally {
+            if (fw != null) {
+                try {
+                    fw.close();
+                } catch (IOException ignore) {
+                }
+            }
+
+        }
+    }
+
+    public void insertRdf1() {
+        jenaModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM, null);
+        try {
+            InputStream in = FileManager.get().open("D:/SensorOntologyFinal.owl");
+            try {
+                jenaModel.read(in, null);
+                Resource sensors = jenaModel.createResource("https://en.wikipedia.org/wiki/Sensor");
+                Resource node = jenaModel.createResource(sensors);
+                insertLeakSensor(node, "129999", "229999", "339999");
+                insertLuminositykSensor(node, "139999", "239999", "349999");
+                insertMotionSensor(node, "149999", "249999", "359999");
+                insertSmokeSensor(node, "159999", "259999", "369999");
+                insertThermostatSensor(node, "169999", "269999");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -328,6 +429,13 @@ public class RdfWriterTest {
         Property lightLevel = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel");
         Property luminosity = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Luminosity");
 
+        node.addProperty(luminositySensor, jenaModel.createResource()
+                .addProperty(id, idValue)
+                .addProperty(timestamp, new Date().toString())
+                .addProperty(lightLevel, lightLevelValue)
+                .addProperty(luminosity, luminosityValue)
+        );
+
     }
 
     public void insertMotionSensor(Resource node, String idValue, String motionDetectedValue, String disturbanceLevelValue) {
@@ -352,7 +460,7 @@ public class RdfWriterTest {
 
         Property smokeSensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor");
         Property co2 = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Carbon_dioxide#CO2");
-        Property temperature = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Temperature");
+        Property temperature = jenaModel.createObjectProperty("https://en.wikipedia.org/wiki/Temperature");
 
         Property celsius = jenaModel.createDatatypeProperty("https://ro.wikipedia.org/wiki/Celsius");
         Property fahrenheit = jenaModel.createDatatypeProperty("https://ro.wikipedia.org/wiki/Fahrenheit");
@@ -378,8 +486,23 @@ public class RdfWriterTest {
         Property timestamp = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Timestamp");
 
         Property thermostatSensor = jenaModel.createProperty("https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor");
-        Property temperatureThm = jenaModel.createDatatypeProperty("https://en.wikipedia.org/wiki/Temperature");
+        Property temperatureThm = jenaModel.createObjectProperty("https://en.wikipedia.org/wiki/Temperature");
 
+        Property celsius = jenaModel.createDatatypeProperty("https://ro.wikipedia.org/wiki/Celsius");
+        Property fahrenheit = jenaModel.createDatatypeProperty("https://ro.wikipedia.org/wiki/Fahrenheit");
+        Property kelvin = jenaModel.createDatatypeProperty("https://ro.wikipedia.org/wiki/Kelvin");
+
+        String tempFahrenheit = ((Double.parseDouble(temperatureThmValue) * (9 / 5)) + 32) + "";
+        String tempKelvin = Double.parseDouble(temperatureThmValue) + 273.15 + "";
+
+        node.addProperty(thermostatSensor, jenaModel.createResource()
+                .addProperty(id, idValue)
+                .addProperty(timestamp, new Date().toString())
+                .addProperty(temperatureThm, jenaModel.createResource()
+                        .addProperty(celsius, temperatureThmValue)
+                        .addProperty(fahrenheit, tempFahrenheit + "")
+                        .addProperty(kelvin, tempKelvin + ""))
+        );
     }
 
     @Test
@@ -388,5 +511,10 @@ public class RdfWriterTest {
         System.out.println(LocalConstants.patientIndividual.size());
         System.out.println(LocalConstants.rdfDevices.size());
         System.out.println(DataParser.devices.size());
+    }
+
+    @Test
+    public void testCreatePatientOntology() {
+
     }
 }

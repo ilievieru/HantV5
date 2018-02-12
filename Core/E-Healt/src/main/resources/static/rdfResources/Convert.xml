@@ -1,120 +1,245 @@
-<?xml version="1.0"?>
 <rdf:RDF
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:j.0="https://ro.wikipedia.org/wiki/"
+        xmlns:j.1="https://en.wikipedia.org/wiki/Light_level_geolocator#"
         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:j.2="https://en.wikipedia.org/wiki/Temperature_measurement#"
+        xmlns:j.3="https://en.wikipedia.org/wiki/Thermostat#"
+        xmlns:j.4="https://en.wikipedia.org/wiki/Carbon_dioxide#"
+        xmlns:j.5="https://en.wikipedia.org/wiki/"
         xmlns:owl="http://www.w3.org/2002/07/owl#"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor">
-        <rdfs:comment>Sensor custom ontology</rdfs:comment>
-        <rdfs:label>Sensor Ontology</rdfs:label>
+        xmlns:j.6="https://en.wikipedia.org/wiki/Units_of_measurement#"
+        xmlns:j.7="https://en.wikipedia.org/wiki/Sound_level#"
+        xmlns:j.8="https://en.wikipedia.org/wiki/Motion_detector#"
+        xmlns:j.9="https://en.wikipedia.org/wiki/Light_meter#"
+        xmlns:j.10="https://en.wikipedia.org/wiki/Motion_(physics)#"
+        xmlns:j.11="https://en.wikipedia.org/wiki/Leak_detection#"
+        xmlns:j.12="https://en.wikipedia.org/wiki/Smoke_detector#"
+        xmlns:j.13="https://en.wikipedia.org/wiki/Level_sensor#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor">
+        <rdfs:label xml:lang="en">Leak Sensor</rdfs:label>
+        <j.5:Unique_identifier>
+            <owl:Property rdf:about="https://en.wikipedia.org/wiki/Unique_identifier">
+                <rdfs:label xml:lang="en">Unique identifier</rdfs:label>
+                <rdfs:label xml:lang="ro">Identificator unic</rdfs:label>
+                <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
+                <rdfs:domain>
+                    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
+                </rdfs:domain>
+                <rdfs:domain>
+                    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
+                </rdfs:domain>
+                <rdfs:domain>
+                    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
+                </rdfs:domain>
+                <rdfs:domain>
+                    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
+                </rdfs:domain>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+            </owl:Property>
+        </j.5:Unique_identifier>
+        <j.2:TemperatureMeasurement>
+            <owl:Class rdf:about="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
+        </j.2:TemperatureMeasurement>
+        <rdfs:comment>Custom Leak Sensor</rdfs:comment>
+        <j.13:waterLevel>
+            <owl:Property rdf:about="https://en.wikipedia.org/wiki/Level_sensor#waterLevel">
+                <rdfs:label xml:lang="en">Water Level</rdfs:label>
+                <rdfs:label xml:lang="ro">Nivelul apei</rdfs:label>
+                <rdfs:comment>This is the water level readed by Leak Sensor</rdfs:comment>
+                <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+                <rdfs:range>
+                    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
+                </rdfs:range>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+            </owl:Property>
+        </j.13:waterLevel>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor"/>
+        </rdfs:subClassOf>
+        <j.6:UnitOfMeasure>
+            <owl:Class rdf:about="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
+        </j.6:UnitOfMeasure>
+        <j.5:Timestamp>
+            <owl:Property rdf:about="https://en.wikipedia.org/wiki/Timestamp">
+                <rdfs:label xml:lang="en">Timestamp</rdfs:label>
+                <rdfs:label xml:lang="ro">Stampila de timp</rdfs:label>
+                <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
+                <rdfs:domain>
+                    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
+                </rdfs:domain>
+                <rdfs:domain>
+                    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
+                </rdfs:domain>
+                <rdfs:domain>
+                    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
+                </rdfs:domain>
+                <rdfs:domain>
+                    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
+                </rdfs:domain>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+            </owl:Property>
+        </j.5:Timestamp>
+        <j.5:Humidity>
+            <owl:Property rdf:about="https://en.wikipedia.org/wiki/Humidity">
+                <rdfs:label xml:lang="en">Humidity Level</rdfs:label>
+                <rdfs:label xml:lang="ro">Umiditatea</rdfs:label>
+                <rdfs:comment>This is the humidity level readed by Leak Sensor</rdfs:comment>
+                <rdfs:range
+                        rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger"/>
+                <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
+                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+            </owl:Property>
+        </j.5:Humidity>
+    </owl:Class>
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor">
+        <rdfs:label xml:lang="en">Smoke Sensor</rdfs:label>
+        <rdfs:comment>Custom Smoke Sensor</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor"/>
+        </rdfs:subClassOf>
+        <j.4:CO2>
+            <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Carbon_dioxide#CO2"/>
+        </j.4:CO2>
+        <j.5:Temperature>
+            <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Temperature"/>
+        </j.5:Temperature>
+        <j.5:Unique_identifier rdf:resource="https://en.wikipedia.org/wiki/Unique_identifier"/>
+        <j.5:Timestamp rdf:resource="https://en.wikipedia.org/wiki/Timestamp"/>
+    </owl:Class>
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor">
+        <rdfs:label xml:lang="en">Luminosity Sensor</rdfs:label>
+        <rdfs:comment>Custom Luminosity Sensor</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor"/>
+        </rdfs:subClassOf>
+        <j.1:LightLevel>
+            <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel"/>
+        </j.1:LightLevel>
+        <j.5:Luminosity>
+            <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Luminosity"/>
+        </j.5:Luminosity>
+        <j.5:Unique_identifier rdf:resource="https://en.wikipedia.org/wiki/Unique_identifier"/>
+        <j.5:Timestamp rdf:resource="https://en.wikipedia.org/wiki/Timestamp"/>
+    </owl:Class>
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor">
+        <rdfs:label xml:lang="en">Thermostat Sensor</rdfs:label>
+        <rdfs:comment>Custom Thermostat Sensor</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor"/>
+        </rdfs:subClassOf>
+        <j.5:Temperature>
+            <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Temperature"/>
+        </j.5:Temperature>
+        <j.5:Unique_identifier rdf:resource="https://en.wikipedia.org/wiki/Unique_identifier"/>
+        <j.5:Timestamp rdf:resource="https://en.wikipedia.org/wiki/Timestamp"/>
     </owl:Class>
     <owl:Class rdf:about="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure">
         <rdfs:comment>Unit of measure</rdfs:comment>
         <rdfs:label xml:lang="en">Unit of measure</rdfs:label>
         <rdfs:label xml:lang="ro">Unitate de masura</rdfs:label>
+        <j.5:Centimetre>
+            <owl:Property rdf:about="https://en.wikipedia.org/wiki/Centimetre">
+                <rdfs:label xml:lang="en">Centimetre</rdfs:label>
+                <rdfs:label xml:lang="ro">Centimetri</rdfs:label>
+                <rdfs:comment>This is a unit of measure</rdfs:comment>
+                <rdfs:range
+                        rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger"/>
+                <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+            </owl:Property>
+        </j.5:Centimetre>
+        <j.5:Metre>
+            <owl:Property rdf:about="https://en.wikipedia.org/wiki/Metre">
+                <rdfs:label xml:lang="en">Metre</rdfs:label>
+                <rdfs:label xml:lang="ro">Metri</rdfs:label>
+                <rdfs:comment>This is a unit of measure</rdfs:comment>
+                <rdfs:range
+                        rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger"/>
+                <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+            </owl:Property>
+        </j.5:Metre>
     </owl:Class>
     <owl:Class rdf:about="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement">
         <rdfs:comment>Temperature Measurement</rdfs:comment>
         <rdfs:label xml:lang="en">Temperature Measurement</rdfs:label>
         <rdfs:label xml:lang="ro">Masurarea temperaturii</rdfs:label>
-    </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor">
-        <rdfs:label xml:lang="en">Leak Sensor</rdfs:label>
-        <rdfs:comment>Custom Leak Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
+        <j.0:Celsius>
+            <owl:Property rdf:about="https://ro.wikipedia.org/wiki/Celsius">
+                <rdfs:label xml:lang="en">Celsius</rdfs:label>
+                <rdfs:label xml:lang="ro">Celsius</rdfs:label>
+                <rdfs:comment>This is a unit of measure</rdfs:comment>
+                <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;integer"/>
+                <rdfs:domain
+                        rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+            </owl:Property>
+        </j.0:Celsius>
+        <j.0:Kelvin>
+            <owl:Property rdf:about="https://ro.wikipedia.org/wiki/Kelvin">
+                <rdfs:label xml:lang="en">Kelvin</rdfs:label>
+                <rdfs:label xml:lang="ro">Kelvin</rdfs:label>
+                <rdfs:comment>This is a unit of measure</rdfs:comment>
+                <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;integer"/>
+                <rdfs:domain
+                        rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+            </owl:Property>
+        </j.0:Kelvin>
+        <j.0:Fahrenheit>
+            <owl:Property rdf:about="https://ro.wikipedia.org/wiki/Fahrenheit">
+                <rdfs:label xml:lang="en">Fahrenheit</rdfs:label>
+                <rdfs:label xml:lang="ro">Fahrenheit</rdfs:label>
+                <rdfs:comment>This is a unit of measure</rdfs:comment>
+                <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;integer"/>
+                <rdfs:domain
+                        rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
+                <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+            </owl:Property>
+        </j.0:Fahrenheit>
     </owl:Class>
     <owl:Class rdf:about="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor">
         <rdfs:label xml:lang="en">Motion Sensor</rdfs:label>
         <rdfs:comment>Custom Motion Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
+        <rdfs:subClassOf>
+            <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor"/>
+        </rdfs:subClassOf>
+        <j.10:MotionDetected>
+            <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected"/>
+        </j.10:MotionDetected>
+        <j.7:DisturbanceLevel>
+            <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel"/>
+        </j.7:DisturbanceLevel>
+        <j.5:Unique_identifier rdf:resource="https://en.wikipedia.org/wiki/Unique_identifier"/>
+        <j.5:Timestamp rdf:resource="https://en.wikipedia.org/wiki/Timestamp"/>
     </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor">
-        <rdfs:label xml:lang="en">Luminosity Sensor</rdfs:label>
-        <rdfs:comment>Custom Luminosity Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor">
+        <rdfs:comment>Sensor custom ontology</rdfs:comment>
+        <rdfs:label>Sensor Ontology</rdfs:label>
+        <j.11:LeakSensor rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
+        <j.9:LuminositySensor rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
+        <j.8:MotionSensor rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
+        <j.12:SmokeSensor rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
+        <j.3:ThermostatSensor rdf:resource="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
     </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor">
-        <rdfs:label xml:lang="en">Smoke Sensor</rdfs:label>
-        <rdfs:comment>Custom Smoke Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
-    </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor">
-        <rdfs:label xml:lang="en">Thermostat Sensor</rdfs:label>
-        <rdfs:comment>Custom Thermostat Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
-    </owl:Class>
-
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Level_sensor#waterLevel">
-        <rdfs:label xml:lang="en">Water Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Nivelul apei</rdfs:label>
-        <rdfs:comment>This is the water level readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
-        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Humidity">
-        <rdfs:label xml:lang="en">Humidity Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Umiditatea</rdfs:label>
-        <rdfs:comment>This is the humidity level readed by Leak Sensor</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;positiveInteger"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
-        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Centimetre">
-        <rdfs:label xml:lang="en">Centimetre</rdfs:label>
-        <rdfs:label xml:lang="ro">Centimetri</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;positiveInteger"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Metre">
-        <rdfs:label xml:lang="en">Metre</rdfs:label>
-        <rdfs:label xml:lang="ro">Metri</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;positiveInteger"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
-    </owl:Property>
-
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel">
-        <rdfs:label xml:lang="en">Light Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Nivelul de lumina</rdfs:label>
-        <rdfs:comment>This is the light level readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
-    </rdf:Property>
-
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Luminosity">
-        <rdfs:label xml:lang="en">Luminosity</rdfs:label>
-        <rdfs:label xml:lang="ro">Luuminoztate</rdfs:label>
-        <rdfs:comment>This is the luminosity level readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
-    </rdf:Property>
-
     <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected">
         <rdfs:label xml:lang="en">Motion detected</rdfs:label>
         <rdfs:label xml:lang="ro">Miscare detectatea</rdfs:label>
         <rdfs:comment>This is the Motion detected readed by Leak Sensor</rdfs:comment>
         <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     </rdf:Property>
-
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel">
-        <rdfs:label xml:lang="en">Disturbance Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Nivelul zgomtului</rdfs:label>
-        <rdfs:comment>This is the Disturbance level readed by Leak Sensor</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;positiveInteger"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
+    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Luminosity">
+        <rdfs:label xml:lang="en">Luminosity</rdfs:label>
+        <rdfs:label xml:lang="ro">Luuminoztate</rdfs:label>
+        <rdfs:comment>This is the luminosity level readed by Leak Sensor</rdfs:comment>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     </rdf:Property>
-
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Carbon_dioxide#CO2">
-        <rdfs:label xml:lang="en">CO2 Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Dioxid de carbon</rdfs:label>
-        <rdfs:comment>This is the co2 level readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
-    </rdf:Property>
-
     <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Temperature">
         <rdfs:label xml:lang="en">Temperature</rdfs:label>
         <rdfs:label xml:lang="ro">Temperatura</rdfs:label>
@@ -122,51 +247,592 @@
         <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
         <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
         <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     </rdf:Property>
-
-    <owl:Property rdf:about="https://ro.wikipedia.org/wiki/Celsius">
-        <rdfs:label xml:lang="en">Celsius</rdfs:label>
-        <rdfs:label xml:lang="ro">Celsius</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://ro.wikipedia.org/wiki/Kelvin">
-        <rdfs:label xml:lang="en">Kelvin</rdfs:label>
-        <rdfs:label xml:lang="ro">Kelvin</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://ro.wikipedia.org/wiki/Fahrenheit">
-        <rdfs:label xml:lang="en">Fahrenheit</rdfs:label>
-        <rdfs:label xml:lang="ro">Fahrenheit</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Unique_identifier">
-        <rdfs:label xml:lang="en">Unique identifier</rdfs:label>
-        <rdfs:label xml:lang="ro">Identificator unic</rdfs:label>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
+    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel">
+        <rdfs:label xml:lang="en">Light Level</rdfs:label>
+        <rdfs:label xml:lang="ro">Nivelul de lumina</rdfs:label>
+        <rdfs:comment>This is the light level readed by Leak Sensor</rdfs:comment>
         <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Timestamp">
-        <rdfs:label xml:lang="en">Timestamp</rdfs:label>
-        <rdfs:label xml:lang="ro">Stampila de timp</rdfs:label>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel">
+        <rdfs:label xml:lang="en">Disturbance Level</rdfs:label>
+        <rdfs:label xml:lang="ro">Nivelul zgomtului</rdfs:label>
+        <rdfs:comment>This is the Disturbance level readed by Leak Sensor</rdfs:comment>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger"/>
         <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    </rdf:Property>
+    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Carbon_dioxide#CO2">
+        <rdfs:label xml:lang="en">CO2 Level</rdfs:label>
+        <rdfs:label xml:lang="ro">Dioxid de carbon</rdfs:label>
+        <rdfs:comment>This is the co2 level readed by Leak Sensor</rdfs:comment>
         <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
-    </owl:Property>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    </rdf:Property>
+    <j.5:Sensor>
+        <j.11:LeakSensor rdf:parseType="Resource">
+            <j.13:waterLevel rdf:parseType="Resource">
+                <j.5:Metre>0.02</j.5:Metre>
+                <j.5:Centimetre>2</j.5:Centimetre>
+            </j.13:waterLevel>
+            <j.5:Humidity>62.1</j.5:Humidity>
+            <j.5:Timestamp>Mon Feb 12 11:41:42 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>103</j.5:Unique_identifier>
+        </j.11:LeakSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>304</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:38 EET 2018</j.5:Timestamp>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.7:DisturbanceLevel>17</j.7:DisturbanceLevel>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.11:LeakSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>114</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:40:09 EET 2018</j.5:Timestamp>
+            <j.5:Humidity>37.7</j.5:Humidity>
+            <j.13:waterLevel rdf:parseType="Resource">
+                <j.5:Centimetre>1</j.5:Centimetre>
+                <j.5:Metre>0.01</j.5:Metre>
+            </j.13:waterLevel>
+        </j.11:LeakSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>511</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:38 EET 2018</j.5:Timestamp>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>105.4</j.0:Celsius>
+                <j.0:Fahrenheit>137.4</j.0:Fahrenheit>
+                <j.0:Kelvin>378.54999999999995</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.9:LuminositySensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>217</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:31 EET 2018</j.5:Timestamp>
+            <j.1:LightLevel>0</j.1:LightLevel>
+            <j.5:Luminosity>11.96</j.5:Luminosity>
+        </j.9:LuminositySensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>403</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:47 EET 2018</j.5:Timestamp>
+            <j.4:CO2>10.2</j.4:CO2>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>9.1</j.0:Celsius>
+                <j.0:Fahrenheit>41.1</j.0:Fahrenheit>
+                <j.0:Kelvin>282.25</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.11:LeakSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>109</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:12 EET 2018</j.5:Timestamp>
+            <j.5:Humidity>82.9</j.5:Humidity>
+            <j.13:waterLevel rdf:parseType="Resource">
+                <j.5:Centimetre>2</j.5:Centimetre>
+                <j.5:Metre>0.02</j.5:Metre>
+            </j.13:waterLevel>
+        </j.11:LeakSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>501</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:20 EET 2018</j.5:Timestamp>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>73.8</j.0:Celsius>
+                <j.0:Fahrenheit>105.8</j.0:Fahrenheit>
+                <j.0:Kelvin>346.95</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.9:LuminositySensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>201</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:40 EET 2018</j.5:Timestamp>
+            <j.1:LightLevel>0</j.1:LightLevel>
+            <j.5:Luminosity>7.36</j.5:Luminosity>
+        </j.9:LuminositySensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.7:DisturbanceLevel>14</j.7:DisturbanceLevel>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.5:Timestamp>Mon Feb 12 11:41:43 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>315</j.5:Unique_identifier>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>419</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:40 EET 2018</j.5:Timestamp>
+            <j.4:CO2>12.5</j.4:CO2>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>11.4</j.0:Celsius>
+                <j.0:Fahrenheit>43.4</j.0:Fahrenheit>
+                <j.0:Kelvin>284.54999999999995</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>378.54999999999995</j.0:Kelvin>
+                <j.0:Fahrenheit>137.4</j.0:Fahrenheit>
+                <j.0:Celsius>105.4</j.0:Celsius>
+            </j.5:Temperature>
+            <j.5:Timestamp>Mon Feb 12 11:41:38 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>511</j.5:Unique_identifier>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.9:LuminositySensor rdf:parseType="Resource">
+            <j.5:Luminosity>5.30</j.5:Luminosity>
+            <j.1:LightLevel>0</j.1:LightLevel>
+            <j.5:Timestamp>Mon Feb 12 11:41:47 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>203</j.5:Unique_identifier>
+        </j.9:LuminositySensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>514</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:44 EET 2018</j.5:Timestamp>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>98.1</j.0:Celsius>
+                <j.0:Fahrenheit>130.1</j.0:Fahrenheit>
+                <j.0:Kelvin>371.25</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.9:LuminositySensor rdf:parseType="Resource">
+            <j.5:Luminosity>9.06</j.5:Luminosity>
+            <j.1:LightLevel>0</j.1:LightLevel>
+            <j.5:Timestamp>Mon Feb 12 11:41:25 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>207</j.5:Unique_identifier>
+        </j.9:LuminositySensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>301</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:20 EET 2018</j.5:Timestamp>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.7:DisturbanceLevel>17</j.7:DisturbanceLevel>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>319</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:51 EET 2018</j.5:Timestamp>
+            <j.10:MotionDetected>false</j.10:MotionDetected>
+            <j.7:DisturbanceLevel>0</j.7:DisturbanceLevel>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>302</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:48 EET 2018</j.5:Timestamp>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.7:DisturbanceLevel>17</j.7:DisturbanceLevel>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>364.84999999999997</j.0:Kelvin>
+                <j.0:Fahrenheit>123.7</j.0:Fahrenheit>
+                <j.0:Celsius>91.7</j.0:Celsius>
+            </j.5:Temperature>
+            <j.5:Timestamp>Mon Feb 12 11:41:42 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>501</j.5:Unique_identifier>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.11:LeakSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>113</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:45 EET 2018</j.5:Timestamp>
+            <j.5:Humidity>60.8</j.5:Humidity>
+            <j.13:waterLevel rdf:parseType="Resource">
+                <j.5:Centimetre>2</j.5:Centimetre>
+                <j.5:Metre>0.02</j.5:Metre>
+            </j.13:waterLevel>
+        </j.11:LeakSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Timestamp>Mon Feb 12 11:40:41 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>411</j.5:Unique_identifier>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>509</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:50 EET 2018</j.5:Timestamp>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>90.1</j.0:Celsius>
+                <j.0:Fahrenheit>122.1</j.0:Fahrenheit>
+                <j.0:Kelvin>363.25</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>365.95</j.0:Kelvin>
+                <j.0:Fahrenheit>124.8</j.0:Fahrenheit>
+                <j.0:Celsius>92.8</j.0:Celsius>
+            </j.5:Temperature>
+            <j.5:Timestamp>Mon Feb 12 11:41:52 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>519</j.5:Unique_identifier>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>315</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:43 EET 2018</j.5:Timestamp>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.7:DisturbanceLevel>14</j.7:DisturbanceLevel>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.7:DisturbanceLevel>18</j.7:DisturbanceLevel>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.5:Timestamp>Mon Feb 12 11:41:54 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>318</j.5:Unique_identifier>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>332.84999999999997</j.0:Kelvin>
+                <j.0:Fahrenheit>91.7</j.0:Fahrenheit>
+                <j.0:Celsius>59.7</j.0:Celsius>
+            </j.5:Temperature>
+            <j.5:Timestamp>Mon Feb 12 11:41:30 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>514</j.5:Unique_identifier>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>281.95</j.0:Kelvin>
+                <j.0:Fahrenheit>40.8</j.0:Fahrenheit>
+                <j.0:Celsius>8.8</j.0:Celsius>
+            </j.5:Temperature>
+            <j.4:CO2>9.9</j.4:CO2>
+            <j.5:Timestamp>Mon Feb 12 11:41:50 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>412</j.5:Unique_identifier>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>358.15</j.0:Kelvin>
+                <j.0:Fahrenheit>117.0</j.0:Fahrenheit>
+                <j.0:Celsius>85.0</j.0:Celsius>
+            </j.5:Temperature>
+            <j.5:Timestamp>Mon Feb 12 11:41:35 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>505</j.5:Unique_identifier>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>401</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:51 EET 2018</j.5:Timestamp>
+            <j.4:CO2>8.6</j.4:CO2>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>9.7</j.0:Celsius>
+                <j.0:Fahrenheit>41.7</j.0:Fahrenheit>
+                <j.0:Kelvin>282.84999999999997</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>501</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:42 EET 2018</j.5:Timestamp>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>91.7</j.0:Celsius>
+                <j.0:Fahrenheit>123.7</j.0:Fahrenheit>
+                <j.0:Kelvin>364.84999999999997</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>514</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:48 EET 2018</j.5:Timestamp>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>89.2</j.0:Celsius>
+                <j.0:Fahrenheit>121.2</j.0:Fahrenheit>
+                <j.0:Kelvin>362.34999999999997</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>303</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:29 EET 2018</j.5:Timestamp>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.7:DisturbanceLevel>16</j.7:DisturbanceLevel>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.11:LeakSensor rdf:parseType="Resource">
+            <j.13:waterLevel rdf:parseType="Resource">
+                <j.5:Metre>0.02</j.5:Metre>
+                <j.5:Centimetre>2</j.5:Centimetre>
+            </j.13:waterLevel>
+            <j.5:Humidity>70.5</j.5:Humidity>
+            <j.5:Timestamp>Mon Feb 12 11:41:40 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>115</j.5:Unique_identifier>
+        </j.11:LeakSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>362.34999999999997</j.0:Kelvin>
+                <j.0:Fahrenheit>121.2</j.0:Fahrenheit>
+                <j.0:Celsius>89.2</j.0:Celsius>
+            </j.5:Temperature>
+            <j.5:Timestamp>Mon Feb 12 11:41:48 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>514</j.5:Unique_identifier>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>285.34999999999997</j.0:Kelvin>
+                <j.0:Fahrenheit>44.2</j.0:Fahrenheit>
+                <j.0:Celsius>12.2</j.0:Celsius>
+            </j.5:Temperature>
+            <j.4:CO2>13.0</j.4:CO2>
+            <j.5:Timestamp>Mon Feb 12 11:41:28 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>402</j.5:Unique_identifier>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>282.45</j.0:Kelvin>
+                <j.0:Fahrenheit>41.3</j.0:Fahrenheit>
+                <j.0:Celsius>9.3</j.0:Celsius>
+            </j.5:Temperature>
+            <j.4:CO2>10.4</j.4:CO2>
+            <j.5:Timestamp>Mon Feb 12 11:41:20 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>402</j.5:Unique_identifier>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>390.04999999999995</j.0:Kelvin>
+                <j.0:Fahrenheit>148.9</j.0:Fahrenheit>
+                <j.0:Celsius>116.9</j.0:Celsius>
+            </j.5:Temperature>
+            <j.5:Timestamp>Mon Feb 12 11:40:51 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>519</j.5:Unique_identifier>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>363.25</j.0:Kelvin>
+                <j.0:Fahrenheit>122.1</j.0:Fahrenheit>
+                <j.0:Celsius>90.1</j.0:Celsius>
+            </j.5:Temperature>
+            <j.5:Timestamp>Mon Feb 12 11:41:50 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>509</j.5:Unique_identifier>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>511</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:16 EET 2018</j.5:Timestamp>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>78.5</j.0:Celsius>
+                <j.0:Fahrenheit>110.5</j.0:Fahrenheit>
+                <j.0:Kelvin>351.65</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.9:LuminositySensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>209</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:49 EET 2018</j.5:Timestamp>
+            <j.1:LightLevel>0</j.1:LightLevel>
+            <j.5:Luminosity>4.77</j.5:Luminosity>
+        </j.9:LuminositySensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.11:LeakSensor rdf:parseType="Resource">
+            <j.13:waterLevel rdf:parseType="Resource">
+                <j.5:Metre>0.02</j.5:Metre>
+                <j.5:Centimetre>2</j.5:Centimetre>
+            </j.13:waterLevel>
+            <j.5:Humidity>90.7</j.5:Humidity>
+            <j.5:Timestamp>Mon Feb 12 11:41:03 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>116</j.5:Unique_identifier>
+        </j.11:LeakSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.7:DisturbanceLevel>9</j.7:DisturbanceLevel>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.5:Timestamp>Mon Feb 12 11:41:45 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>312</j.5:Unique_identifier>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.9:LuminositySensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>213</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:43 EET 2018</j.5:Timestamp>
+            <j.1:LightLevel>0</j.1:LightLevel>
+            <j.5:Luminosity>6.63</j.5:Luminosity>
+        </j.9:LuminositySensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>519</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:52 EET 2018</j.5:Timestamp>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>92.8</j.0:Celsius>
+                <j.0:Fahrenheit>124.8</j.0:Fahrenheit>
+                <j.0:Kelvin>365.95</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>405</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:43 EET 2018</j.5:Timestamp>
+            <j.4:CO2>10.9</j.4:CO2>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>9.8</j.0:Celsius>
+                <j.0:Fahrenheit>41.8</j.0:Fahrenheit>
+                <j.0:Kelvin>282.95</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>282.25</j.0:Kelvin>
+                <j.0:Fahrenheit>41.1</j.0:Fahrenheit>
+                <j.0:Celsius>9.1</j.0:Celsius>
+            </j.5:Temperature>
+            <j.4:CO2>10.2</j.4:CO2>
+            <j.5:Timestamp>Mon Feb 12 11:41:47 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>403</j.5:Unique_identifier>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>318</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:54 EET 2018</j.5:Timestamp>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.7:DisturbanceLevel>18</j.7:DisturbanceLevel>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.9:LuminositySensor rdf:parseType="Resource">
+            <j.5:Luminosity>5.25</j.5:Luminosity>
+            <j.1:LightLevel>0</j.1:LightLevel>
+            <j.5:Timestamp>Mon Feb 12 11:41:52 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>208</j.5:Unique_identifier>
+        </j.9:LuminositySensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.11:LeakSensor rdf:parseType="Resource">
+            <j.13:waterLevel rdf:parseType="Resource">
+                <j.5:Metre>0.02</j.5:Metre>
+                <j.5:Centimetre>2</j.5:Centimetre>
+            </j.13:waterLevel>
+            <j.5:Humidity>72.4</j.5:Humidity>
+            <j.5:Timestamp>Mon Feb 12 11:41:23 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>118</j.5:Unique_identifier>
+        </j.11:LeakSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>371.25</j.0:Kelvin>
+                <j.0:Fahrenheit>130.1</j.0:Fahrenheit>
+                <j.0:Celsius>98.1</j.0:Celsius>
+            </j.5:Temperature>
+            <j.5:Timestamp>Mon Feb 12 11:41:44 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>514</j.5:Unique_identifier>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.11:LeakSensor rdf:parseType="Resource">
+            <j.13:waterLevel rdf:parseType="Resource">
+                <j.5:Metre>0.02</j.5:Metre>
+                <j.5:Centimetre>2</j.5:Centimetre>
+            </j.13:waterLevel>
+            <j.5:Humidity>56.5</j.5:Humidity>
+            <j.5:Timestamp>Mon Feb 12 11:41:51 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>119</j.5:Unique_identifier>
+        </j.11:LeakSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>284.54999999999995</j.0:Kelvin>
+                <j.0:Fahrenheit>43.4</j.0:Fahrenheit>
+                <j.0:Celsius>11.4</j.0:Celsius>
+            </j.5:Temperature>
+            <j.4:CO2>12.5</j.4:CO2>
+            <j.5:Timestamp>Mon Feb 12 11:41:40 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>419</j.5:Unique_identifier>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.3:ThermostatSensor rdf:parseType="Resource">
+            <j.5:Unique_identifier>514</j.5:Unique_identifier>
+            <j.5:Timestamp>Mon Feb 12 11:41:30 EET 2018</j.5:Timestamp>
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Celsius>59.7</j.0:Celsius>
+                <j.0:Fahrenheit>91.7</j.0:Fahrenheit>
+                <j.0:Kelvin>332.84999999999997</j.0:Kelvin>
+            </j.5:Temperature>
+        </j.3:ThermostatSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.7:DisturbanceLevel>17</j.7:DisturbanceLevel>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.5:Timestamp>Mon Feb 12 11:41:38 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>304</j.5:Unique_identifier>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.8:MotionSensor rdf:parseType="Resource">
+            <j.7:DisturbanceLevel>17</j.7:DisturbanceLevel>
+            <j.10:MotionDetected>true</j.10:MotionDetected>
+            <j.5:Timestamp>Mon Feb 12 11:41:48 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>302</j.5:Unique_identifier>
+        </j.8:MotionSensor>
+    </j.5:Sensor>
+    <j.5:Sensor>
+        <j.12:SmokeSensor rdf:parseType="Resource">
+            <j.5:Temperature rdf:parseType="Resource">
+                <j.0:Kelvin>282.95</j.0:Kelvin>
+                <j.0:Fahrenheit>41.8</j.0:Fahrenheit>
+                <j.0:Celsius>9.8</j.0:Celsius>
+            </j.5:Temperature>
+            <j.4:CO2>10.9</j.4:CO2>
+            <j.5:Timestamp>Mon Feb 12 11:41:43 EET 2018</j.5:Timestamp>
+            <j.5:Unique_identifier>405</j.5:Unique_identifier>
+        </j.12:SmokeSensor>
+    </j.5:Sensor>
 </rdf:RDF>

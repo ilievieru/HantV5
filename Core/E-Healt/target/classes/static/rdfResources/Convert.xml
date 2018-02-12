@@ -5,168 +5,44 @@
         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Sensor">
-        <rdfs:comment>Sensor custom ontology</rdfs:comment>
-        <rdfs:label>Sensor Ontology</rdfs:label>
-    </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure">
-        <rdfs:comment>Unit of measure</rdfs:comment>
-        <rdfs:label xml:lang="en">Unit of measure</rdfs:label>
-        <rdfs:label xml:lang="ro">Unitate de masura</rdfs:label>
-    </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement">
-        <rdfs:comment>Temperature Measurement</rdfs:comment>
-        <rdfs:label xml:lang="en">Temperature Measurement</rdfs:label>
-        <rdfs:label xml:lang="ro">Masurarea temperaturii</rdfs:label>
-    </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor">
-        <rdfs:label xml:lang="en">Leak Sensor</rdfs:label>
-        <rdfs:comment>Custom Leak Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
-    </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor">
-        <rdfs:label xml:lang="en">Motion Sensor</rdfs:label>
-        <rdfs:comment>Custom Motion Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
-    </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor">
-        <rdfs:label xml:lang="en">Luminosity Sensor</rdfs:label>
-        <rdfs:comment>Custom Luminosity Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
-    </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor">
-        <rdfs:label xml:lang="en">Smoke Sensor</rdfs:label>
-        <rdfs:comment>Custom Smoke Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
-    </owl:Class>
-    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor">
-        <rdfs:label xml:lang="en">Thermostat Sensor</rdfs:label>
-        <rdfs:comment>Custom Thermostat Sensor</rdfs:comment>
-        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Sensor"/>
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Person">
+        <rdfs:comment>Person custom ontology</rdfs:comment>
+        <rdfs:label xml:lang="en">Person Ontology</rdfs:label>
+        <rdfs:label xml:lang="ro">Persoana</rdfs:label>
+
     </owl:Class>
 
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Level_sensor#waterLevel">
-        <rdfs:label xml:lang="en">Water Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Nivelul apei</rdfs:label>
-        <rdfs:comment>This is the water level readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
-        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
-    </owl:Property>
+    <owl:Class rdf:about="https://en.wiktionary.org/wiki/nurse">
+        <rdfs:label xml:lang="en">Nurse</rdfs:label>
+        <rdfs:label xml:lang="ro">Asistenta</rdfs:label>
 
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Humidity">
-        <rdfs:label xml:lang="en">Humidity Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Umiditatea</rdfs:label>
-        <rdfs:comment>This is the humidity level readed by Leak Sensor</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;positiveInteger"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
-        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    </owl:Property>
+        <rdfs:comment>Nurse</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+    </owl:Class>
 
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Centimetre">
-        <rdfs:label xml:lang="en">Centimetre</rdfs:label>
-        <rdfs:label xml:lang="ro">Centimetri</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;positiveInteger"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
-    </owl:Property>
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Doctor_of_Medicine#Doctor">
+        <rdfs:label xml:lang="en">Doctor</rdfs:label>
+        <rdfs:label xml:lang="ro">Doctor</rdfs:label>
 
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Metre">
-        <rdfs:label xml:lang="en">Metre</rdfs:label>
-        <rdfs:label xml:lang="ro">Metri</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;positiveInteger"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure"/>
-    </owl:Property>
+        <rdfs:comment>Doctor</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+    </owl:Class>
 
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel">
-        <rdfs:label xml:lang="en">Light Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Nivelul de lumina</rdfs:label>
-        <rdfs:comment>This is the light level readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
-    </rdf:Property>
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Patient">
+        <rdfs:label xml:lang="en">Patient</rdfs:label>
+        <rdfs:label xml:lang="ro">Pcient</rdfs:label>
 
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Luminosity">
-        <rdfs:label xml:lang="en">Luminosity</rdfs:label>
-        <rdfs:label xml:lang="ro">Luuminoztate</rdfs:label>
-        <rdfs:comment>This is the luminosity level readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
-    </rdf:Property>
+        <rdfs:comment>Nurse</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+    </owl:Class>
 
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected">
-        <rdfs:label xml:lang="en">Motion detected</rdfs:label>
-        <rdfs:label xml:lang="ro">Miscare detectatea</rdfs:label>
-        <rdfs:comment>This is the Motion detected readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
-    </rdf:Property>
-
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel">
-        <rdfs:label xml:lang="en">Disturbance Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Nivelul zgomtului</rdfs:label>
-        <rdfs:comment>This is the Disturbance level readed by Leak Sensor</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;positiveInteger"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
-    </rdf:Property>
-
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Carbon_dioxide#CO2">
-        <rdfs:label xml:lang="en">CO2 Level</rdfs:label>
-        <rdfs:label xml:lang="ro">Dioxid de carbon</rdfs:label>
-        <rdfs:comment>This is the co2 level readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
-    </rdf:Property>
-
-    <rdf:Property rdf:about="https://en.wikipedia.org/wiki/Temperature">
-        <rdfs:label xml:lang="en">Temperature</rdfs:label>
-        <rdfs:label xml:lang="ro">Temperatura</rdfs:label>
-        <rdfs:comment>This is the temperature level readed by Leak Sensor</rdfs:comment>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
-        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
-    </rdf:Property>
-
-    <owl:Property rdf:about="https://ro.wikipedia.org/wiki/Celsius">
-        <rdfs:label xml:lang="en">Celsius</rdfs:label>
-        <rdfs:label xml:lang="ro">Celsius</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://ro.wikipedia.org/wiki/Kelvin">
-        <rdfs:label xml:lang="en">Kelvin</rdfs:label>
-        <rdfs:label xml:lang="ro">Kelvin</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://ro.wikipedia.org/wiki/Fahrenheit">
-        <rdfs:label xml:lang="en">Fahrenheit</rdfs:label>
-        <rdfs:label xml:lang="ro">Fahrenheit</rdfs:label>
-        <rdfs:comment>This is a unit of measure</rdfs:comment>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
-    </owl:Property>
-
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Unique_identifier">
-        <rdfs:label xml:lang="en">Unique identifier</rdfs:label>
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Unique_identifier">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+        <rdfs:domain rdf:resource="https://en.wiktionary.org/wiki/nurse"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Doctor_of_Medicine#Doctor"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Patient"/>
         <rdfs:label xml:lang="ro">Identificator unic</rdfs:label>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
-    </owl:Property>
+        <rdfs:label xml:lang="en">Unique identifier</rdfs:label>
+    </owl:DatatypeProperty>
 
-    <owl:Property rdf:about="https://en.wikipedia.org/wiki/Timestamp">
-        <rdfs:label xml:lang="en">Timestamp</rdfs:label>
-        <rdfs:label xml:lang="ro">Stampila de timp</rdfs:label>
-        <rdfs:range rdf:resource="xsd;integer"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Leak_detection#LeakSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Motion_detector#MotionSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Light_meter#LuminositySensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor"/>
-        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor"/>
-    </owl:Property>
 </rdf:RDF>
