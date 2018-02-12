@@ -110,7 +110,7 @@ function generateRawData(){
             {
                 "PatientId": getRandomInt(0,15),
                 "Cam": getRandomInt(1,19),
-                "Age": 37,
+                "Age": getRandomInt(9,75),
                 "IsMoving": tools.rand(3) == 2 ? true : false,
                 "Pulse": tools.rand2(67,87),
                 "BodyTemperature": tools.rand2(360, 370)/10,
@@ -119,7 +119,7 @@ function generateRawData(){
             {
                 "PatientId": getRandomInt(15,30),
                 "Cam": getRandomInt(1,19),
-                "Age": 71,
+                "Age": getRandomInt(9,75),
                 "IsMoving": tools.rand(3) == 2 ? true : false,
                 "Pulse": tools.rand2(67,87),
                 "BodyTemperature": tools.rand2(360, 370)/10,
@@ -128,7 +128,7 @@ function generateRawData(){
             {
                 "PatientId": getRandomInt(30,45),
                 "Cam": getRandomInt(1,19),
-                "Age": 13,
+                "Age": getRandomInt(9,75),
                 "IsMoving": tools.rand(3) == 2 ? true : false,
                 "Pulse": tools.rand2(67,87),
                 "BodyTemperature": tools.rand2(360, 370)/10,
