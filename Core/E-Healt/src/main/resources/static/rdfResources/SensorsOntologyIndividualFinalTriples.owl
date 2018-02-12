@@ -1,0 +1,203 @@
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Leak Sensor"@en .
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <https://en.wikipedia.org/wiki/Unique_identifier> <https://en.wikipedia.org/wiki/Unique_identifier> .
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> <https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> .
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Custom Leak Sensor" .
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <https://en.wikipedia.org/wiki/Level_sensor#waterLevel> <https://en.wikipedia.org/wiki/Level_sensor#waterLevel> .
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://en.wikipedia.org/wiki/Sensor> .
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> <https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> .
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <https://en.wikipedia.org/wiki/Timestamp> <https://en.wikipedia.org/wiki/Timestamp> .
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <https://en.wikipedia.org/wiki/Humidity> <https://en.wikipedia.org/wiki/Humidity> .
+<https://ro.wikipedia.org/wiki/Fahrenheit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Property> .
+<https://ro.wikipedia.org/wiki/Fahrenheit> <http://www.w3.org/2000/01/rdf-schema#label> "Fahrenheit"@en .
+<https://ro.wikipedia.org/wiki/Fahrenheit> <http://www.w3.org/2000/01/rdf-schema#label> "Fahrenheit"@ro .
+<https://ro.wikipedia.org/wiki/Fahrenheit> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a unit of measure" .
+<https://ro.wikipedia.org/wiki/Fahrenheit> <http://www.w3.org/2000/01/rdf-schema#range> <file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;integer> .
+<https://ro.wikipedia.org/wiki/Fahrenheit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> .
+<https://ro.wikipedia.org/wiki/Fahrenheit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://en.wikipedia.org/wiki/Sensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Sensor custom ontology" .
+<https://en.wikipedia.org/wiki/Sensor> <http://www.w3.org/2000/01/rdf-schema#label> "Sensor Ontology" .
+<https://en.wikipedia.org/wiki/Sensor> <https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> <https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> .
+<https://en.wikipedia.org/wiki/Sensor> <https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> <https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> .
+<https://en.wikipedia.org/wiki/Sensor> <https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> <https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> .
+<https://en.wikipedia.org/wiki/Sensor> <https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> <https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> .
+<https://en.wikipedia.org/wiki/Sensor> <https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> <https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> .
+<https://en.wikipedia.org/wiki/Sensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:Bf4481b6eX2D9e5aX2D494cX2D875bX2D04e8147bcb44 <https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> _:Bc01cb90dX2D4b2bX2D4e25X2D9d66X2Df1fc9b9f2bf3 .
+_:Bf4481b6eX2D9e5aX2D494cX2D875bX2D04e8147bcb44 <https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> _:B4486c2d7X2D0fbfX2D4a56X2D9365X2D9b195f75f1de .
+_:Bf4481b6eX2D9e5aX2D494cX2D875bX2D04e8147bcb44 <https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> _:B44b0af11X2Db0a8X2D412bX2D94e6X2Dfa20d39c4776 .
+_:Bf4481b6eX2D9e5aX2D494cX2D875bX2D04e8147bcb44 <https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> _:B4275e2c7X2D91a5X2D415bX2Da441X2D6e1401eee973 .
+_:Bf4481b6eX2D9e5aX2D494cX2D875bX2D04e8147bcb44 <https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> _:B92412b90X2D0b3dX2D442bX2Db634X2Df5b7c3207e40 .
+_:Bf4481b6eX2D9e5aX2D494cX2D875bX2D04e8147bcb44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://en.wikipedia.org/wiki/Sensor> .
+<https://en.wikipedia.org/wiki/Unique_identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Property> .
+<https://en.wikipedia.org/wiki/Unique_identifier> <http://www.w3.org/2000/01/rdf-schema#label> "Unique identifier"@en .
+<https://en.wikipedia.org/wiki/Unique_identifier> <http://www.w3.org/2000/01/rdf-schema#label> "Identificator unic"@ro .
+<https://en.wikipedia.org/wiki/Unique_identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> .
+<https://en.wikipedia.org/wiki/Unique_identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> .
+<https://en.wikipedia.org/wiki/Unique_identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> .
+<https://en.wikipedia.org/wiki/Unique_identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> .
+<https://en.wikipedia.org/wiki/Unique_identifier> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> .
+<https://en.wikipedia.org/wiki/Unique_identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Thermostat Sensor"@en .
+<https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Custom Thermostat Sensor" .
+<https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://en.wikipedia.org/wiki/Sensor> .
+<https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> <https://en.wikipedia.org/wiki/Temperature> <https://en.wikipedia.org/wiki/Temperature> .
+<https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> <https://en.wikipedia.org/wiki/Unique_identifier> <https://en.wikipedia.org/wiki/Unique_identifier> .
+<https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> <https://en.wikipedia.org/wiki/Timestamp> <https://en.wikipedia.org/wiki/Timestamp> .
+<https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://en.wikipedia.org/wiki/Luminosity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://en.wikipedia.org/wiki/Luminosity> <http://www.w3.org/2000/01/rdf-schema#label> "Luminosity"@en .
+<https://en.wikipedia.org/wiki/Luminosity> <http://www.w3.org/2000/01/rdf-schema#label> "Luuminoztate"@ro .
+<https://en.wikipedia.org/wiki/Luminosity> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the luminosity level readed by Leak Sensor" .
+<https://en.wikipedia.org/wiki/Luminosity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> .
+<https://en.wikipedia.org/wiki/Luminosity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://en.wikipedia.org/wiki/Centimetre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Property> .
+<https://en.wikipedia.org/wiki/Centimetre> <http://www.w3.org/2000/01/rdf-schema#label> "Centimetre"@en .
+<https://en.wikipedia.org/wiki/Centimetre> <http://www.w3.org/2000/01/rdf-schema#label> "Centimetri"@ro .
+<https://en.wikipedia.org/wiki/Centimetre> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a unit of measure" .
+<https://en.wikipedia.org/wiki/Centimetre> <http://www.w3.org/2000/01/rdf-schema#range> <file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger> .
+<https://en.wikipedia.org/wiki/Centimetre> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> .
+<https://en.wikipedia.org/wiki/Centimetre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> <http://www.w3.org/2000/01/rdf-schema#comment> "Temperature Measurement" .
+<https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "Temperature Measurement"@en .
+<https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "Masurarea temperaturii"@ro .
+<https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> <https://ro.wikipedia.org/wiki/Celsius> <https://ro.wikipedia.org/wiki/Celsius> .
+<https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> <https://ro.wikipedia.org/wiki/Kelvin> <https://ro.wikipedia.org/wiki/Kelvin> .
+<https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> <https://ro.wikipedia.org/wiki/Fahrenheit> <https://ro.wikipedia.org/wiki/Fahrenheit> .
+<https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://en.wikipedia.org/wiki/Temperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://en.wikipedia.org/wiki/Temperature> <http://www.w3.org/2000/01/rdf-schema#label> "Temperature"@en .
+<https://en.wikipedia.org/wiki/Temperature> <http://www.w3.org/2000/01/rdf-schema#label> "Temperatura"@ro .
+<https://en.wikipedia.org/wiki/Temperature> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the temperature level readed by Leak Sensor" .
+<https://en.wikipedia.org/wiki/Temperature> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> .
+<https://en.wikipedia.org/wiki/Temperature> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> .
+<https://en.wikipedia.org/wiki/Temperature> <http://www.w3.org/2000/01/rdf-schema#range> <https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> .
+<https://en.wikipedia.org/wiki/Temperature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://en.wikipedia.org/wiki/Level_sensor#waterLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Property> .
+<https://en.wikipedia.org/wiki/Level_sensor#waterLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Water Level"@en .
+<https://en.wikipedia.org/wiki/Level_sensor#waterLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Nivelul apei"@ro .
+<https://en.wikipedia.org/wiki/Level_sensor#waterLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the water level readed by Leak Sensor" .
+<https://en.wikipedia.org/wiki/Level_sensor#waterLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> .
+<https://en.wikipedia.org/wiki/Level_sensor#waterLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://en.wikipedia.org/wiki/Level_sensor#waterLevel> <http://www.w3.org/2000/01/rdf-schema#range> <https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> .
+<https://en.wikipedia.org/wiki/Level_sensor#waterLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected> <http://www.w3.org/2000/01/rdf-schema#label> "Motion detected"@en .
+<https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected> <http://www.w3.org/2000/01/rdf-schema#label> "Miscare detectatea"@ro .
+<https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the Motion detected readed by Leak Sensor" .
+<https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> .
+<https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://en.wikipedia.org/wiki/Timestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Property> .
+<https://en.wikipedia.org/wiki/Timestamp> <http://www.w3.org/2000/01/rdf-schema#label> "Timestamp"@en .
+<https://en.wikipedia.org/wiki/Timestamp> <http://www.w3.org/2000/01/rdf-schema#label> "Stampila de timp"@ro .
+<https://en.wikipedia.org/wiki/Timestamp> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> .
+<https://en.wikipedia.org/wiki/Timestamp> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> .
+<https://en.wikipedia.org/wiki/Timestamp> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> .
+<https://en.wikipedia.org/wiki/Timestamp> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> .
+<https://en.wikipedia.org/wiki/Timestamp> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Thermostat#ThermostatSensor> .
+<https://en.wikipedia.org/wiki/Timestamp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> <http://www.w3.org/2000/01/rdf-schema#label> "Luminosity Sensor"@en .
+<https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Custom Luminosity Sensor" .
+<https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://en.wikipedia.org/wiki/Sensor> .
+<https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> <https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel> <https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel> .
+<https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> <https://en.wikipedia.org/wiki/Luminosity> <https://en.wikipedia.org/wiki/Luminosity> .
+<https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> <https://en.wikipedia.org/wiki/Unique_identifier> <https://en.wikipedia.org/wiki/Unique_identifier> .
+<https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> <https://en.wikipedia.org/wiki/Timestamp> <https://en.wikipedia.org/wiki/Timestamp> .
+<https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Disturbance Level"@en .
+<https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Nivelul zgomtului"@ro .
+<https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the Disturbance level readed by Leak Sensor" .
+<https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> <http://www.w3.org/2000/01/rdf-schema#range> <file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger> .
+<https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> .
+<https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:Bc01cb90dX2D4b2bX2D4e25X2D9d66X2Df1fc9b9f2bf3 <https://en.wikipedia.org/wiki/Temperature> _:Ba683d541X2D9ba2X2D46ebX2D8802X2Db629e59e0e6d .
+_:Bc01cb90dX2D4b2bX2D4e25X2D9d66X2Df1fc9b9f2bf3 <https://en.wikipedia.org/wiki/Timestamp> "Mon Feb 12 13:22:19 EET 2018" .
+_:Bc01cb90dX2D4b2bX2D4e25X2D9d66X2Df1fc9b9f2bf3 <https://en.wikipedia.org/wiki/Unique_identifier> "16" .
+_:B467d7377X2D335dX2D458cX2D940fX2Da952083ec08a <https://en.wikipedia.org/wiki/Metre> "0.22" .
+_:B467d7377X2D335dX2D458cX2D940fX2Da952083ec08a <https://en.wikipedia.org/wiki/Centimetre> "22" .
+<https://en.wikipedia.org/wiki/Carbon_dioxide#CO2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://en.wikipedia.org/wiki/Carbon_dioxide#CO2> <http://www.w3.org/2000/01/rdf-schema#label> "CO2 Level"@en .
+<https://en.wikipedia.org/wiki/Carbon_dioxide#CO2> <http://www.w3.org/2000/01/rdf-schema#label> "Dioxid de carbon"@ro .
+<https://en.wikipedia.org/wiki/Carbon_dioxide#CO2> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the co2 level readed by Leak Sensor" .
+<https://en.wikipedia.org/wiki/Carbon_dioxide#CO2> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> .
+<https://en.wikipedia.org/wiki/Carbon_dioxide#CO2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B4486c2d7X2D0fbfX2D4a56X2D9365X2D9b195f75f1de <https://en.wikipedia.org/wiki/Temperature> _:Bf92bc6e6X2D8bc9X2D4fd1X2D99b0X2D4dbe7bbaefb8 .
+_:B4486c2d7X2D0fbfX2D4a56X2D9365X2D9b195f75f1de <https://en.wikipedia.org/wiki/Carbon_dioxide#CO2> "25" .
+_:B4486c2d7X2D0fbfX2D4a56X2D9365X2D9b195f75f1de <https://en.wikipedia.org/wiki/Timestamp> "Mon Feb 12 13:22:19 EET 2018" .
+_:B4486c2d7X2D0fbfX2D4a56X2D9365X2D9b195f75f1de <https://en.wikipedia.org/wiki/Unique_identifier> "15" .
+_:Ba683d541X2D9ba2X2D46ebX2D8802X2Db629e59e0e6d <https://ro.wikipedia.org/wiki/Kelvin> "299.15" .
+_:Ba683d541X2D9ba2X2D46ebX2D8802X2Db629e59e0e6d <https://ro.wikipedia.org/wiki/Fahrenheit> "58.0" .
+_:Ba683d541X2D9ba2X2D46ebX2D8802X2Db629e59e0e6d <https://ro.wikipedia.org/wiki/Celsius> "26" .
+<https://en.wikipedia.org/wiki/Humidity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Property> .
+<https://en.wikipedia.org/wiki/Humidity> <http://www.w3.org/2000/01/rdf-schema#label> "Humidity Level"@en .
+<https://en.wikipedia.org/wiki/Humidity> <http://www.w3.org/2000/01/rdf-schema#label> "Umiditatea"@ro .
+<https://en.wikipedia.org/wiki/Humidity> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the humidity level readed by Leak Sensor" .
+<https://en.wikipedia.org/wiki/Humidity> <http://www.w3.org/2000/01/rdf-schema#range> <file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger> .
+<https://en.wikipedia.org/wiki/Humidity> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Leak_detection#LeakSensor> .
+<https://en.wikipedia.org/wiki/Humidity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://en.wikipedia.org/wiki/Humidity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B92412b90X2D0b3dX2D442bX2Db634X2Df5b7c3207e40 <https://en.wikipedia.org/wiki/Level_sensor#waterLevel> _:B467d7377X2D335dX2D458cX2D940fX2Da952083ec08a .
+_:B92412b90X2D0b3dX2D442bX2Db634X2Df5b7c3207e40 <https://en.wikipedia.org/wiki/Humidity> "33" .
+_:B92412b90X2D0b3dX2D442bX2Db634X2Df5b7c3207e40 <https://en.wikipedia.org/wiki/Timestamp> "Mon Feb 12 13:22:19 EET 2018" .
+_:B92412b90X2D0b3dX2D442bX2Db634X2Df5b7c3207e40 <https://en.wikipedia.org/wiki/Unique_identifier> "12" .
+<https://en.wikipedia.org/wiki/Metre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Property> .
+<https://en.wikipedia.org/wiki/Metre> <http://www.w3.org/2000/01/rdf-schema#label> "Metre"@en .
+<https://en.wikipedia.org/wiki/Metre> <http://www.w3.org/2000/01/rdf-schema#label> "Metri"@ro .
+<https://en.wikipedia.org/wiki/Metre> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a unit of measure" .
+<https://en.wikipedia.org/wiki/Metre> <http://www.w3.org/2000/01/rdf-schema#range> <file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger> .
+<https://en.wikipedia.org/wiki/Metre> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> .
+<https://en.wikipedia.org/wiki/Metre> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> <http://www.w3.org/2000/01/rdf-schema#comment> "Unit of measure" .
+<https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> <http://www.w3.org/2000/01/rdf-schema#label> "Unit of measure"@en .
+<https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> <http://www.w3.org/2000/01/rdf-schema#label> "Unitate de masura"@ro .
+<https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> <https://en.wikipedia.org/wiki/Centimetre> <https://en.wikipedia.org/wiki/Centimetre> .
+<https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> <https://en.wikipedia.org/wiki/Metre> <https://en.wikipedia.org/wiki/Metre> .
+<https://en.wikipedia.org/wiki/Units_of_measurement#UnitOfMeasure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Smoke Sensor"@en .
+<https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Custom Smoke Sensor" .
+<https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://en.wikipedia.org/wiki/Sensor> .
+<https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> <https://en.wikipedia.org/wiki/Carbon_dioxide#CO2> <https://en.wikipedia.org/wiki/Carbon_dioxide#CO2> .
+<https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> <https://en.wikipedia.org/wiki/Temperature> <https://en.wikipedia.org/wiki/Temperature> .
+<https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> <https://en.wikipedia.org/wiki/Unique_identifier> <https://en.wikipedia.org/wiki/Unique_identifier> .
+<https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> <https://en.wikipedia.org/wiki/Timestamp> <https://en.wikipedia.org/wiki/Timestamp> .
+<https://en.wikipedia.org/wiki/Smoke_detector#SmokeSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://ro.wikipedia.org/wiki/Celsius> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Property> .
+<https://ro.wikipedia.org/wiki/Celsius> <http://www.w3.org/2000/01/rdf-schema#label> "Celsius"@en .
+<https://ro.wikipedia.org/wiki/Celsius> <http://www.w3.org/2000/01/rdf-schema#label> "Celsius"@ro .
+<https://ro.wikipedia.org/wiki/Celsius> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a unit of measure" .
+<https://ro.wikipedia.org/wiki/Celsius> <http://www.w3.org/2000/01/rdf-schema#range> <file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;integer> .
+<https://ro.wikipedia.org/wiki/Celsius> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> .
+<https://ro.wikipedia.org/wiki/Celsius> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:B44b0af11X2Db0a8X2D412bX2D94e6X2Dfa20d39c4776 <https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> "35" .
+_:B44b0af11X2Db0a8X2D412bX2D94e6X2Dfa20d39c4776 <https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected> "24" .
+_:B44b0af11X2Db0a8X2D412bX2D94e6X2Dfa20d39c4776 <https://en.wikipedia.org/wiki/Timestamp> "Mon Feb 12 13:22:19 EET 2018" .
+_:B44b0af11X2Db0a8X2D412bX2D94e6X2Dfa20d39c4776 <https://en.wikipedia.org/wiki/Unique_identifier> "14" .
+_:B4275e2c7X2D91a5X2D415bX2Da441X2D6e1401eee973 <https://en.wikipedia.org/wiki/Luminosity> "34" .
+_:B4275e2c7X2D91a5X2D415bX2Da441X2D6e1401eee973 <https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel> "23" .
+_:B4275e2c7X2D91a5X2D415bX2Da441X2D6e1401eee973 <https://en.wikipedia.org/wiki/Timestamp> "Mon Feb 12 13:22:19 EET 2018" .
+_:B4275e2c7X2D91a5X2D415bX2Da441X2D6e1401eee973 <https://en.wikipedia.org/wiki/Unique_identifier> "13" .
+_:Bf92bc6e6X2D8bc9X2D4fd1X2D99b0X2D4dbe7bbaefb8 <https://ro.wikipedia.org/wiki/Kelvin> "309.15" .
+_:Bf92bc6e6X2D8bc9X2D4fd1X2D99b0X2D4dbe7bbaefb8 <https://ro.wikipedia.org/wiki/Fahrenheit> "68.0" .
+_:Bf92bc6e6X2D8bc9X2D4fd1X2D99b0X2D4dbe7bbaefb8 <https://ro.wikipedia.org/wiki/Celsius> "36" .
+<https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> <http://www.w3.org/2000/01/rdf-schema#label> "Motion Sensor"@en .
+<https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> <http://www.w3.org/2000/01/rdf-schema#comment> "Custom Motion Sensor" .
+<https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://en.wikipedia.org/wiki/Sensor> .
+<https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> <https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected> <https://en.wikipedia.org/wiki/Motion_(physics)#MotionDetected> .
+<https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> <https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> <https://en.wikipedia.org/wiki/Sound_level#DisturbanceLevel> .
+<https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> <https://en.wikipedia.org/wiki/Unique_identifier> <https://en.wikipedia.org/wiki/Unique_identifier> .
+<https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> <https://en.wikipedia.org/wiki/Timestamp> <https://en.wikipedia.org/wiki/Timestamp> .
+<https://en.wikipedia.org/wiki/Motion_detector#MotionSensor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://ro.wikipedia.org/wiki/Kelvin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Property> .
+<https://ro.wikipedia.org/wiki/Kelvin> <http://www.w3.org/2000/01/rdf-schema#label> "Kelvin"@en .
+<https://ro.wikipedia.org/wiki/Kelvin> <http://www.w3.org/2000/01/rdf-schema#label> "Kelvin"@ro .
+<https://ro.wikipedia.org/wiki/Kelvin> <http://www.w3.org/2000/01/rdf-schema#comment> "This is a unit of measure" .
+<https://ro.wikipedia.org/wiki/Kelvin> <http://www.w3.org/2000/01/rdf-schema#range> <file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;integer> .
+<https://ro.wikipedia.org/wiki/Kelvin> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement> .
+<https://ro.wikipedia.org/wiki/Kelvin> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Light Level"@en .
+<https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel> <http://www.w3.org/2000/01/rdf-schema#label> "Nivelul de lumina"@ro .
+<https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "This is the light level readed by Leak Sensor" .
+<https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel> <http://www.w3.org/2000/01/rdf-schema#domain> <https://en.wikipedia.org/wiki/Light_meter#LuminositySensor> .
+<https://en.wikipedia.org/wiki/Light_level_geolocator#LightLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .

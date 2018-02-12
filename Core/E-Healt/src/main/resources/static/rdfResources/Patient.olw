@@ -1,0 +1,168 @@
+<?xml version="1.0"?>
+<rdf:RDF
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:owl="http://www.w3.org/2002/07/owl#"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Person">
+        <rdfs:comment>Person custom ontology</rdfs:comment>
+        <rdfs:label xml:lang="en">Person Ontology</rdfs:label>
+        <rdfs:label xml:lang="ro">Persoana</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://en.wiktionary.org/wiki/nurse">
+        <rdfs:label xml:lang="en">Nurse</rdfs:label>
+        <rdfs:label xml:lang="ro">Asistenta</rdfs:label>
+        <rdfs:comment>Nurse</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Doctor_of_Medicine#Doctor">
+        <rdfs:label xml:lang="en">Doctor</rdfs:label>
+        <rdfs:label xml:lang="ro">Doctor</rdfs:label>
+        <rdfs:comment>Doctor</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Patient">
+        <rdfs:label xml:lang="en">Patient</rdfs:label>
+        <rdfs:label xml:lang="ro">Pcient</rdfs:label>
+        <rdfs:comment>Patient</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Medical_state#MedicalCondition">
+        <rdfs:label xml:lang="en">Medical Condition</rdfs:label>
+        <rdfs:label xml:lang="ro">Stare de sanatate</rdfs:label>
+        <rdfs:comment>Medical Condition</rdfs:comment>
+        <rdfs:subClassOf rdf:resource="https://en.wikipedia.org/wiki/Patient"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement">
+        <rdfs:comment>Temperature Measurement</rdfs:comment>
+        <rdfs:label xml:lang="en">Temperature Measurement</rdfs:label>
+        <rdfs:label xml:lang="ro">Masurarea temperaturii</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/Hospital#HospitalRoom">
+        <rdfs:comment>Hospital Room</rdfs:comment>
+        <rdfs:label xml:lang="en">Hospital Room</rdfs:label>
+        <rdfs:label xml:lang="ro">Camera</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="https://en.wikipedia.org/wiki/List_of_average_human_height_worldwide#heightProperty">
+        <rdfs:label xml:lang="ro">Inaltime</rdfs:label>
+        <rdfs:label xml:lang="en">Height</rdfs:label>
+    </owl:Class>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Unique_identifier">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+        <rdfs:domain rdf:resource="https://en.wiktionary.org/wiki/nurse"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Doctor_of_Medicine#Doctor"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Patient"/>
+        <rdfs:label xml:lang="ro">Identificator unic</rdfs:label>
+        <rdfs:label xml:lang="en">Unique identifier</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Personal_name#Name">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+        <rdfs:domain rdf:resource="https://en.wiktionary.org/wiki/nurse"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Doctor_of_Medicine#Doctor"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Patient"/>
+        <rdfs:label xml:lang="ro">Nume</rdfs:label>
+        <rdfs:label xml:lang="en">Name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Ageing#age">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Medical_state#MedicalCondition"/>
+        <rdfs:label xml:lang="ro">Varsta</rdfs:label>
+        <rdfs:label xml:lang="en">Age</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/List_of_average_human_height_worldwide#height">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Medical_state#MedicalCondition"/>
+        <rdfs:label xml:lang="ro">Inaltime</rdfs:label>
+        <rdfs:label xml:lang="en">Height</rdfs:label>
+        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/List_of_average_human_height_worldwide#heightProperty"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Metre">
+        <rdfs:domain
+                rdf:resource="https://en.wikipedia.org/wiki/List_of_average_human_height_worldwide#heightProperty"/>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger"/>
+        <rdfs:comment>This is a unit of measure</rdfs:comment>
+        <rdfs:label xml:lang="ro">Metri</rdfs:label>
+        <rdfs:label xml:lang="en">Metre</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Property"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Centimetre">
+        <rdfs:domain
+                rdf:resource="https://en.wikipedia.org/wiki/List_of_average_human_height_worldwide#heightProperty"/>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;positiveInteger"/>
+        <rdfs:comment>This is a unit of measure</rdfs:comment>
+        <rdfs:label xml:lang="ro">Centimetri</rdfs:label>
+        <rdfs:label xml:lang="en">Centimetre</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Property"/>
+    </owl:DatatypeProperty>
+    <owl:DatatypeProperty rdf:about="https://en.wiktionary.org/wiki/date_of_birth#dateOfBirth">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Person"/>
+        <rdfs:domain rdf:resource="https://en.wiktionary.org/wiki/nurse"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Doctor_of_Medicine#Doctor"/>
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Patient"/>
+        <rdfs:label xml:lang="ro">Data Nasteri</rdfs:label>
+        <rdfs:label xml:lang="en">Date Of Birth</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Heart_rate">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Medical_state#MedicalCondition"/>
+        <rdfs:label xml:lang="ro">Batai pe minut</rdfs:label>
+        <rdfs:label xml:lang="en">Heart rate per minute</rdfs:label>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;pozitiveInteger"/>
+
+    </owl:DatatypeProperty>
+
+    <owl:ObjectProperty rdf:about="https://en.wikipedia.org/wiki/Human_body_temperature#BodyTemperature">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Medical_state#MedicalCondition"/>
+        <rdfs:label xml:lang="ro">Temperatura Corpului</rdfs:label>
+        <rdfs:label xml:lang="en">Body Temperature</rdfs:label>
+        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
+
+    </owl:ObjectProperty>
+
+    <owl:DatatypeProperty rdf:about="https://en.wikipedia.org/wiki/Hospital#Room">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Patient"/>
+        <rdfs:label xml:lang="ro">Camera</rdfs:label>
+        <rdfs:label xml:lang="en">Room</rdfs:label>
+        <rdfs:range rdf:resource="https://en.wikipedia.org/wiki/Hospital#HospitalRoom"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://ro.wikipedia.org/wiki/Celsius">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;integer"/>
+        <rdfs:comment>This is a unit of measure</rdfs:comment>
+        <rdfs:label xml:lang="ro">Celsius</rdfs:label>
+        <rdfs:label xml:lang="en">Celsius</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Property"/>
+    </owl:DatatypeProperty>
+	
+    <owl:DatatypeProperty rdf:about="https://ro.wikipedia.org/wiki/Kelvin">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;integer"/>
+        <rdfs:comment>This is a unit of measure</rdfs:comment>
+        <rdfs:label xml:lang="ro">Kelvin</rdfs:label>
+        <rdfs:label xml:lang="en">Kelvin</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Property"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="https://ro.wikipedia.org/wiki/Fahrenheit">
+        <rdfs:domain rdf:resource="https://en.wikipedia.org/wiki/Temperature_measurement#TemperatureMeasurement"/>
+        <rdfs:range rdf:resource="file:///C:/Users/p3700664/IdeaProjects/HantV5/Core/E-Healt/xsd;integer"/>
+        <rdfs:comment>This is a unit of measure</rdfs:comment>
+        <rdfs:label xml:lang="ro">Fahrenheit</rdfs:label>
+        <rdfs:label xml:lang="en">Fahrenheit</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Property"/>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

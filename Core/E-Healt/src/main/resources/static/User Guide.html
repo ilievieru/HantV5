@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="CSS\first.css">
+    <link rel="stylesheet" href="CSS\second.css">
+    <title>Hant</title>
+</head>
+<body>
+<div class="container">
+    <article typeof="schema:ScholarlyArticle" id="toCenter">
+        <h1 id="Name">Hazard Smart Assistant</h1>
+        <section typeof="sa:MaterialsAndMethods">
+            <ol>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/ilievieru" typeof="schema:Person">
+                        <span property="schema:givenName">Vieru</span>
+                        <span property="schema:familyName">Ilie-Constantin</span>
+                    </a>
+                    <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                        <a property="schema:email" href="mailto:ilie.vieru@info.uaic.ro"
+                           title="corresponding author">✉</a>
+                    </sup>
+                </li>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/ioanungurean" typeof="schema:Person">
+                        <span property="schema:givenName">Ungurean</span>
+                        <span property="schema:familyName">Ioan</span>
+                    </a>
+                </li>
+            </ol>
+        </section>
+
+        <section id="UserGuide" class="chapters" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">User Guide</h2><br>
+            <h3 class="chaptersTitle">Installer</h3><br>
+            <p>First we have to start up the engine of the application. We can do by typing the command "./start.sh".
+                Remember that this will start at port 8443.</p>
+            <img src="img/StartEngine.jpg" width="100%" height="50%"><br>
+
+            <p>After the engine is started we need to start the microServices. We can do by typing the command
+                "./Launch.cmd"</p>
+            <img src="img/Launch.jpg" width="100%" height="50%"><br>
+
+            <p>Then we need to connect our micro services to the engine.</p>
+            <img src="img/Connect.jpg" width="100%" height="50%"><br>
+
+            <p>After all of this is done we need to start the UI application. This can ala be done with the command
+                "./start.sh"
+                but be carefully to be in the right folder.</p>
+
+            <p>When all of this is over we ca finally access the application. Remember! This Ui app wiil start at port
+                8080.
+            </p>
+
+            <p>When we access it we will see three tabs. One called "Sensors", one "Patient", and one "Building"</p>
+            <img src="img/Tabs.jpg" width="100%" height="50%"><br>
+
+            <p>First tab will open a list of all the sensors</p>
+            <img src="img/Sensors.jpg" width="100%" height="50%"><br>
+
+            <p>If you click on one of them you will be redirected at a description page of that sensor</p>
+            <img src="img/SensorsRedirect.jpg" width="100%" height="50%"><br>
+
+            <p>Next Tab is Patients. When you click here a list of patient will become available</p>
+            <img src="img/Patients.jpg" width="100%" height="50%"><br>
+
+            <p>As we seen at sensors if we click on one element of the list, we will be redirected to a description
+                page</p>
+            <img src="img/PatientRedirect.jpg" width="100%" height="50%"><br>
+
+            <p>next and last tab is building. If we click here a representation of the building plan will be
+                provided</p>
+            <img src="img/Building.jpg" width="100%" height="50%"><br>
+
+            <p>If we click on the title of the page, we will witch rooms are in danger</p>
+            <img src="img/BuildingAlarm.jpg" width="100%" height="50%"><br>
+
+            <p>Also if we click one one of this room, we will receive a list of those sensors witch created the
+                alarm</p>
+            <img src="img/AlarmSensor.jpg" width="100%" height="50%"><br>
+
+            <p>The last thing that should be notice, is the restore button from the bottom. This button will dismiss the
+                alarm
+                until next click on title.</p>
+            <img src="img/Restore.jpg" width="100%" height="50%"><br>
+
+        </section>
+
+        <section id="Links" class="chapters">
+            <h2 class="chaptersTitle">Links</h2>
+            <ul>
+                <li typeof="schema:ScholarlyArticle" resouces="https://localhost:8080/FinalHant.wedm">
+                    <a href="https://localhost:8443/getPatients">Video</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="https://github.com/ilievieru/WADE.MS.HAnt">
+                    <a href="https://github.com/ilievieru/WADE.MS.HAnt">GitHub</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="http://localhost:8080/SensorOntology.txt">
+                    <a href="http://localhost:8080/SensorOntology.txt">SensorOntology</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="http://localhost:8080/PatientOntology.txt">
+                    <a href="http://localhost:8080/PatientOntology.txt">PatientOntology</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="http://localhost:8080/">
+                    <a href="http://localhost:8080/">User Interface Api</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="https://localhost:8443/NotificationEndpoint">
+                    <a href="https://localhost:8443/NotificationEndpoint">Data Listener</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="https://localhost:8443/NotificationEndpoint">
+                    <a href="https://localhost:8443/getDevices">Sensor List</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="https://localhost:8443/NotificationEndpoint">
+                    <a href="https://localhost:8443/getPatients">Patients List</a>
+                </li>
+
+            </ul>
+        </section>
+
+    </article>
+</div>
+
+</body>
+</html>

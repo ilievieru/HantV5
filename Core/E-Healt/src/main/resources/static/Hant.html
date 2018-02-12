@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="CSS\first.css">
+    <link rel="stylesheet" href="CSS\second.css">
+    <title>Hant</title>
+</head>
+<body>
+<div class="container">
+    <article typeof="schema:ScholarlyArticle" id="toCenter">
+        <h1 id="Name">Hazard Smart Assistant</h1>
+        <section typeof="sa:MaterialsAndMethods">
+            <ol>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/ilievieru" typeof="schema:Person">
+                        <span property="schema:givenName">Vieru</span>
+                        <span property="schema:familyName">Ilie-Constantin</span>
+                    </a>
+                    <sup property="sa:roleContactPoint" typeof="schema:ContactPoint">
+                        <a property="schema:email" href="mailto:ilie.vieru@info.uaic.ro"
+                           title="corresponding author">✉</a>
+                    </sup>
+                </li>
+                <li property="schema:contributor" typeof="sa:ContributorRole">
+                    <a property="schema:contributor" href="https://github.com/ioanungurean" typeof="schema:Person">
+                        <span property="schema:givenName">Ungurean</span>
+                        <span property="schema:familyName">Ioan</span>
+                    </a>
+                </li>
+            </ol>
+        </section>
+
+        <section id="TechnicalReport" class="chapters" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">Technical Report</h2><br>
+            <h3 class="chaptersTitle">The problem</h3><br>
+
+            <p>We have the following environment, a hospital, who is equipped with IoT enabled devices capable of
+                monitoring the environment and detecting foreign substances, smoke, water/gas leaks, temperature,
+                earthquakes, etc.</p>
+            <p>We need to implement a system that will interact with the IoT devices, collect data from the devices,
+                analyse it and create an evacuation plan in case an emergency is detected in the hospital.</p>
+        </section>
+
+        <section id="Requirements" class="requirements" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">Requirements</h2><br>
+            <p>The system should have the following properties:</p>
+            <p>- should be able to interact with a broad types of devices and monitor all connected devices</p>
+            <p>- the system should be able to filter the data from devices to get only the relevant data</p>
+            <p>- the system should be able to process the relevant data and decide if an emergency has occured</p>
+            <p>- in case of emergency the system should take action and notify the personnel and aid in the evacuation
+                process</p>
+            <p>- because the system receive sensitive data all communication between system and device should be
+                secured</p>
+        </section>
+
+        <section id="Abstract" class="chapters" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">Abstract</h2><br>
+            <p>Hant or Hazard Smart Assistant is a system that helps certain entities to evacuate a number of persons
+                from a building in
+                case of hazards.</p>
+            <p>It provides alerts to rescue teams, such as firemen, police officers and at the same time is
+                capable of helping with the rescue by providing an evacuation/rescue plan to be used by the victims or
+                rescue teams. It relies on data provided by the hospital and it is capable to work with multiple
+                hospitals at once without great computational effort.</p>
+            <p>Considering that each hospital is equipped with sensors tracking the environment, we will build a
+                knowledge-based system
+                that will make decision to help police department, fire department, medical staff and others, to make
+                the fastest evacuation possible.</p>
+            <p>Also, to make something like this possible we will need to know the position of each patient and his
+                medical condition. Based on this
+                information the system will prioritize evacuation in some scenario.</p>
+            <p>To make our system even more precise, we will use specific information, from DBpedia and schema.org</p>
+            <p>This is a multi-device application, to be used with ease, and will have real-time response to, almost,
+                any possible situation.</p>
+            <p>Critical data, plus various statistics, will be available via a SPARQL endpoint, and also real-time data
+                will be saved, so the decision
+                making algorithm and the planner, can be improved.</p>
+        </section>
+
+        <section id="Introduction" class="chapters" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">Introduction</h2>
+            <p>In order to create such a big system, we divided the structure in five main components:</p>
+            <ul>
+                <li>Core</li>
+                <li>MicroServices</li>
+                <li>Planner</li>
+                <li>Building plan</li>
+                <li>Storage</li>
+            </ul>
+            <img src="img/ClassDiagram.jpg" width="100%" height="50%" typeof="sa:MaterialsAndMethods">
+            <p>The core of this application is written in java, it is the module that makes the decision and integrates
+                the other components.</p>
+            <p>MicroServices will be written in NodeJs, and their main purpose is to send streams of date to the
+                engine.</p>
+            <p>For the storage layer we will use Apache Jena, and SPARQL queries to save and read critical data when we
+                will need.</p>
+        </section>
+
+        <section id="MicroServices" class="chapters" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">MicroServices</h2>
+            <p>This module is one of the most important modules because it provides the date on witch the system will
+                make decision.</p>
+            <p>In this application, this data will be simulated, but the represent the actual sensors and other devices,
+                that will send data to
+                the core. This data will be in a Json format, so it will fast and easy to read on the core.</p>
+            <p>At this point we decided that we should have a specific set of MicroServices.</p>
+            <ul>
+                <li>Fire sensor</li>
+                <li>Temperature sensor</li>
+                <li>Motion sensor</li>
+                <li>Luminosity sensor</li>
+                <li>Leak sensor</li>
+                <li>Bracelet</li>
+            </ul>
+        </section>
+
+        <section id="Core" class="chapters" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">Core</h2>
+            <p>This module is the heart of the application, and because of that it has more then one features.</p>
+            <ul>
+                <li>Receives data from MicroServices</li>
+                <li>Makes a prefilter of data received</li>
+                <li>Update data</li>
+                <li>Send data to UI</li>
+                <li>Decision making</li>
+                <li>other</li>
+            </ul>
+            <p>To explain better what this component does we created a business process management diagram. </p>
+            <img src="img/Core.jpg" width="100%" height="50%">
+            <p>First step is to receive data from MicroServices and read them. To receive data we created a rest
+                endpoint.
+                After we receive a stream of data, we read some specific data for every device, and if we consider that
+                those data
+                are relevant we continue by creating an instance of that device and send it further to decision
+                making.</p>
+            <p>Every device that sends data to core, has an entity defined in java, so we could work with objects, not
+                with streams of
+                data. Also this objects will be saved in database, but sometimes not in their actual format. So, to save
+                only relevant data,
+                we created a Transformer, witch will adapt the device entity in an entity that can be saved.</p>
+            <p>Basically after the system reads date from streams, decides if those data ar relevant or not. If they are
+                not relevant
+                we move on to clear the stream. If they are relevant we sent them to decision making.</p>
+
+            <!-- <h2>External resources</h2>
+             <p>
+                 We rely on external resources to monitor not only internal hazards but event natural ones.
+                 To check for storms or other environmental dangers we use the NOAA's Severe Weather Data Inventory
+                 site that lets us detect any major dangers approaching a certain hospital's location.
+             </p>
+             <p>
+                 To extract knowlege from patient databases or any kind of medical information we use the WIKIDoc
+                 site.
+             </p>
+             <p>
+                 We also use an REST API that every hospital must implement in order for out application
+                 to comunicate with it. We use this because it eases the way we access and search for data in
+                 each hospital.
+             </p>
+ -->
+            <h3>Public API</h3>
+            <p>
+                We implemented an API that the information generated by the app could be distributed and seen
+                from various sources, browse, mobile app, etc. This API permits the visualisation of certain key
+                informations such as the plans for entering and exiting any rooms, the state of the building,
+                state of the people inside and an evacuation plan. This public API is a layer on top of our Internal
+                API that uses it and restricts some of the users input. In other words it encapsulates the code used
+                to make the computations and can only get the code generated after processing and also send some
+                messages to modify within reason the data in the internal module.
+            </p>
+            <a href="https://localhost:8443/NotificationEndpoint">Data listener: https://localhost:8443/NotificationEndpoint</a><br>
+            <a href="https://localhost:8443/getDevices">Device List: https://localhost:8443/getDevices</a><br>
+            <a href="http://localhost:8080/">UI Interface: http://localhost:8080/</a><br>
+            <a href="http://localhost:8080/PatientOntology.txt">Patient Ontology: http://localhost:8080/PatientOntology.txt</a><br>
+            <a href="http://localhost:8080/SensorOntology.txt">Sensors Ontology: http://localhost:8080/SensorOntology.txt</a><br>
+        </section>
+
+        <section id="BuildingPlan" class="chapters" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">Building Plan</h2>
+            <p>This part is not a very complex one, but it is very important. Building plan has a crucial importance,
+                because it will represent the
+                basic input for out planner, and decision making algorithm. If this part encounters some issue, there is
+                a strong possibility that
+                the hole system to fail.</p>
+            <p>Our challenge here is to find an optimal way to represent the building.</p>
+            <p>For start we thought to try represent this building as an hierarchy of object, witch will contain precise
+                information,
+                and enough information for our purpose</p>
+
+        </section>
+
+        <section id="Storage" class="chapters" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">Storage</h2>
+            <p>This module is responsible for read and write data used in application.</p>
+            <p>For this we used Apache Jena framework and Sparql.</p>
+            <p>At this point we decided to store all of date in xml and rdf files. After we saved data in these files,
+                we use
+                Sparql to interrogate these files and extract the date we need.</p>
+            <p>More then this, we will use this file as description for entities in our application. For example if we
+                want to know more
+                about a person, witch is register in our server, we will access the about feature witch will return the
+                xml file associated
+                with that person. </p>
+            <p>To create this files we needed an ontology. For all the patients we could use FOAF ontology, but we had
+                some
+                special cases and we had to extend FOAF and create another ontology named "PatientOntology". </p>
+            <p>This ontology can be found under apache jena package in our project, or you can find it at
+                http://localhost:8080/PatientOntology.txt</p>
+            <p>Also we needed an ontology for our devices/ sensors. First we thought to use SSN ontology, but it wasn't
+                applicable on our data. </p>
+            <p>Instead of extending this ontology to, we decided to create a new one, from scratch, but following the
+                example
+                of SSn ontology</p>
+            <p>This one can also be found under apache jena package, or you can find it at
+                http://localhost:8080/SensorOntology.txt</p>
+
+        </section>
+
+        <section id="Results" class="requirements" typeof="sa:MaterialsAndMethods">
+            <h2 class="chaptersTitle">Results</h2><br>
+            <h3 class="chaptersTitle">Microservices</h3>
+
+            <p>We implemented a set of templated microservices. There are enough devices emulated to be able to simulate
+                an emergency scenario.
+                We added scripts for configuring as many instances as needed. These instances are then automatically
+                started. In this way we automate the way we handle the network of devices.
+                One implemented microservice can span as many instances as needed and then used in creating a network of
+                devices.
+            </p>
+            <h3 class="chaptersTitle">Core</h3>
+            <p>This is the main module that integrates with all other components and orchestrates them in order to
+                achieve our goal.
+                It’s responsibilities are the following:
+            </p>
+            <p>- Listen for device data changes</p>
+            <p>- Collect and filter the data</p>
+            <p>- Manage and Monitor for changes in sensor values that are significant</p>
+            <p>- Send an alarm to the UI component that displays the state and handles user interaction or other methods
+                of countering the emergency</p>
+
+            <h3 class="chaptersTitle">UI</h3>
+            <p>We also created a tool to create building plans and to allow the user to map detected IoT devices to the
+                newly created building plan.
+                Besides this, we also modeled a UI-like interface to expose activities of the current system. When an
+                alert launches this would show us the room in which the device has been triggered.
+            </p>
+        </section>
+
+        <section typeof="sa:MaterialsAndMethods">
+            <h2>Further improvments</h2>
+            <p>
+                Because we can not take the information from any real hospital we must implement a simulation to be used
+                in the testing
+                of our app. The simulation must consist of several test cases with different levels of danger. For
+                example we can simulate
+                a medium size fire that can grow from room to room in some random timeframe. We must consider other
+                possibilities as
+                single source multiple source, the material that is burning, etc. We also have to simulate patients
+                inside the hopsital
+                and sensors that gives us real time data to check the system for bugs and performence.
+            </p>
+        </section>
+
+        <section id="References" class="chapters">
+            <h2 class="chaptersTitle">References</h2>
+            <ul>
+                <li typeof="schema:ScholarlyArticle" resouces="http://scholarly.vernacular.io/">
+                    <a href="http://scholarly.vernacular.io/">Scholary Html</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle"
+                    resource="https://books.google.ro/books?id=C9GYCgAAQBAJ&pg=PA3213&lpg=PA3213&dq=iot+hazard+system&source=bl&ots=0YfU9KBmhM&sig=aUQSMnSYwvAqg1bCDW_pj7KOEQc&hl=ro&sa=X&ved=0ahUKEwiG_NabuuPXAhWRmLQKHQViAKkQ6AEIJjAA#v=onepage&q=iot%20hazard%20system&f=false">
+                    <a href="https://books.google.ro/books?id=C9GYCgAAQBAJ&pg=PA3213&lpg=PA3213&dq=iot+hazard+system&source=bl&ots=0YfU9KBmhM&sig=aUQSMnSYwvAqg1bCDW_pj7KOEQc&hl=ro&sa=X&ved=0ahUKEwiG_NabuuPXAhWRmLQKHQViAKkQ6AEIJjAA#v=onepage&q=iot%20hazard%20system&f=false">
+                        Safety and Reliability of Complex Engineered Systems</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle"
+                    resource="http://www.sciencedirect.com/science/article/pii/S0167739X16303909">
+                    <a href="http://www.sciencedirect.com/science/article/pii/S0167739X16303909">Technologies of
+                        Internet
+                        of Things applied to an Earthquake Early Warning System</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle"
+                    resource="http://psas.scripts.mit.edu/home/wp-content/uploads/2017/04/Greg-Pope_STPA-For-IoT-And-Mobile-Software_Paper.pdf">
+                    <a href="http://psas.scripts.mit.edu/home/wp-content/uploads/2017/04/Greg-Pope_STPA-For-IoT-And-Mobile-Software_Paper.pdf">
+                        Hazard Analysis Technique for the Internet of Things (IoT) and Mobile</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle"
+                    resource="https://en.wikipedia.org/wiki/SPARQL">
+                    <a href="https://en.wikipedia.org/wiki/SPARQL">Sparql</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle"
+                    resource="https://jena.apache.org/tutorials/">
+                    <a href="https://jena.apache.org/tutorials/">Apache Jena</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle"
+                    resource="https://planet-risk.org/index.php/pr/article/view/189/332">
+                    <a href="https://planet-risk.org/index.php/pr/article/view/189/332">The trend towards the Internet
+                        of Things: what does it help in Disaster and Risk Management?</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="Links" class="chapters">
+            <h2 class="chaptersTitle">Links</h2>
+            <ul>
+                <li typeof="schema:ScholarlyArticle" resouces="https://github.com/ilievieru/WADE.MS.HAnt">
+                    <a href="https://github.com/ilievieru/WADE.MS.HAnt">GitHub</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="http://localhost:8080/SensorOntology.txt">
+                    <a href="http://localhost:8080/SensorOntology.txt">SensorOntology</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="http://localhost:8080/PatientOntology.txt">
+                    <a href="http://localhost:8080/PatientOntology.txt">PatientOntology</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="http://localhost:8080/">
+                    <a href="http://localhost:8080/">User Interface Api</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="https://localhost:8443/NotificationEndpoint">
+                    <a href="https://localhost:8443/NotificationEndpoint">Data Listener</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="https://localhost:8443/NotificationEndpoint">
+                    <a href="https://localhost:8443/getDevices">Sensor List</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="https://localhost:8443/NotificationEndpoint">
+                    <a href="https://localhost:8443/getPatients">Patients List</a>
+                </li>
+
+                <li typeof="schema:ScholarlyArticle" resouces="https://localhost:8080/FinalHant.wedm">
+                    <a href="https://localhost:8443/getPatients">Video</a>
+                </li>
+
+            </ul>
+        </section>
+
+    </article>
+</div>
+
+</body>
+</html>
